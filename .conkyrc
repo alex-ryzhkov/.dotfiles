@@ -38,7 +38,7 @@ ${offset 20}${execpi 3600 checkupdates | awk 'END { print (NR == 0 ? "System is 
 
 ${font Terminus:size=12}${color #756969}CPU ${hr 2} ${alignr}${font}$color
 
-${offset 20}Average (${cpu cpu0}%)
+${offset 20}Average (${cpu cpu0}%)${alignr}${exec cat /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input | cut -c-2 }°C
 ${offset 20}${cpugraph cpu0}
 
 ${offset 20}${top name 1}$alignr${top cpu 1}%
@@ -58,10 +58,10 @@ ${offset 20}${top_mem name 3}$alignr${top_mem mem 3}%
 
 ${font Terminus:size=12}${color #756969}Storage ${hr 2} ${alignr}${font}$color
 
-${offset 20}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${offset 20}/ ${offset 34} ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
 ${offset 20}${fs_bar /}
 
-${offset 20}/home/extra $alignc ${fs_used /home/yoba/extra} / ${fs_size /home/yoba/extra} $alignr ${fs_used_perc /home/yoba/extra}%
+${offset 20}/extra $alignc ${fs_used /home/yoba/extra} / ${fs_size /home/yoba/extra} $alignr ${fs_used_perc /home/yoba/extra}%
 ${offset 20}${fs_bar /home/yoba/extra}
 
 ${color #756969}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
