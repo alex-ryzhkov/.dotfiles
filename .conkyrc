@@ -55,13 +55,14 @@ ${offset 20}$membar
 ${offset 20}${top_mem name 1}$alignr${top_mem mem 1}%
 ${offset 20}${top_mem name 2}$alignr${top_mem mem 2}%
 ${offset 20}${top_mem name 3}$alignr${top_mem mem 3}%
-${offset 20}${top_mem name 4}$alignr${top_mem mem 4}%
-${offset 20}${top_mem name 5}$alignr${top_mem mem 5}%
 
 ${font Terminus:size=12}${color #756969}Storage ${hr 2} ${alignr}${font}$color
 
 ${offset 20}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
 ${offset 20}${fs_bar /}
+
+${offset 20}/home/extra $alignc ${fs_used /home/yoba/extra} / ${fs_size /home/yoba/extra} $alignr ${fs_used_perc /home/yoba/extra}%
+${offset 20}${fs_bar /home/yoba/extra}
 
 ${color #756969}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
 
