@@ -34,8 +34,8 @@ ${font Terminus:size=14}${color #756969}$nodename ${hr 2} ${alignr}${font}$color
 ${offset 20}Uptime:$alignr$uptime
 ${offset 20}Load:$alignr$loadavg
 
-${offset 20}${execpi 3600 checkupdates | awk 'END { print (NR == 0 ? "System is up to date" : NR " package" (NR > 1 ? "s" : "")); }'}
-
+${offset 20}Repo:$alignr${execpi 3600 checkupdates | awk 'END { print (NR == 0 ? " up to date" : NR " package" (NR > 1 ? "s" : "")); }'}
+${offset 20}AUR:$alignr${execpi 3600 checkupdates-aur | awk 'END { print (NR == 0 ? " up to date" : NR " package" (NR > 1 ? "s" : "")); }'}
 ${font Terminus:size=12}${color #756969}CPU ${hr 2} ${alignr}${font}$color
 
 ${offset 20}Average (${cpu cpu0}%)${alignr}${exec cat /sys/devices/virtual/hwmon/hwmon0/temp1_input | cut -c-2 }°C
