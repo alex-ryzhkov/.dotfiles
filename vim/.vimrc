@@ -31,8 +31,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 " nerdtree plugin
 Plugin 'scrooloose/nerdtree'
-" markdown preview plugin
-"
+" smart undo plugin
+Plugin 'sjl/gundo.vim'
 " visual stuff plugins
 "
 " papercolor theme
@@ -73,6 +73,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 " comfier key combinations for copy/paste outside vim
 nnoremap <C-V> "+p
 vnoremap <C-C> "+y
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
 " --------------------------------------------------------------------------------
 " PLUGIN  SETTINGS
 " --------------------------------------------------------------------------------
@@ -183,3 +185,7 @@ set ignorecase          " ignore case when searching
 set smartcase           " ignore case when pattern is all small case
                         " case-sensitive othervise
 set foldenable          " enable folding
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+

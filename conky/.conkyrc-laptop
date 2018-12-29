@@ -38,7 +38,7 @@ ${offset 20}Repo:$alignr${execpi 3600 checkupdates | awk 'END { print (NR == 0 ?
 ${offset 20}AUR:$alignr${execpi 3600 checkupdates-aur | awk 'END { print (NR == 0 ? " up to date" : NR " package" (NR > 1 ? "s" : "")); }'}
 ${font Terminus:size=12}${color #756969}CPU ${hr 2} ${alignr}${font}$color
 
-${offset 20}Average (${cpu cpu0}%)${alignr}${exec cat /sys/devices/virtual/hwmon/hwmon0/temp1_input | cut -c-2 }°C
+${offset 20}Average (${cpu cpu0}%)${alignr}${exec cat /sys/devices/virtual/thermal/thermal_zone0/hwmon0/temp1_input | cut -c-2 }°C
 
 ${offset 20}${cpugraph cpu0}
 
