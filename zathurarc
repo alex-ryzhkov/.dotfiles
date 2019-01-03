@@ -2,7 +2,11 @@ set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
 set scroll-step 160
+#enable system-wide clipboard
 set selection-clipboard clipboard
+#contract $HOME to '~'
+set window-title-home-tilde true
+set statusbar-home-tilde true
 
 map u scroll half-up
 map [fullscreen] u scroll full-up
