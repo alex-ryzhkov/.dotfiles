@@ -59,8 +59,6 @@ filetype plugin indent on    " required
 " --------------------------------------------------------------------------------
 " KEY MAPPINGS
 " --------------------------------------------------------------------------------
-" escape key remap
-inoremap ;; <Esc>
 " insert new line under and over
 nmap oo o<Esc>k
 nmap OO O<Esc>j
