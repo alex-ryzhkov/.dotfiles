@@ -34,6 +34,6 @@ map j scroll down
 map [fullscreen] j scroll down
 map k scroll up
 map [fullscreen] k scroll up
-unmap F
-map F toggle_fullscreen
-map [fullscreen] F toggle_fullscreen
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
