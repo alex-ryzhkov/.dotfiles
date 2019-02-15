@@ -65,12 +65,12 @@ ${offset 20}${fs_bar /}
 ${offset 20}/extra $alignc ${fs_used /home/yoba/extra} / ${fs_size /home/yoba/extra} $alignr ${fs_used_perc /home/yoba/extra}%
 ${offset 20}${fs_bar /home/yoba/extra}
 
-${color white}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
+${color #756969}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
 
 ${offset 20}${color white}$color ${downspeed wlo1}${alignr}${color white}$color ${upspeed wlo1}
 ${offset 20}${downspeedgraph wlo1 25,100} ${alignr}${upspeedgraph wlo1 25,100}$color${endif}
 
-${color white}${if_up enp0s25}enp0s25 (${addr enp0s25}) ${hr 2}$color
+${color #756969}${if_up enp0s25}enp0s25 (${addr enp0s25}) ${hr 2}$color
 
 ${offset 20}${color white}$color ${downspeed enp0s25}${alignr}${color white}$color ${upspeed enp0s25}
 ${offset 20}${downspeedgraph enp0s25 25,100} ${alignr}${upspeedgraph enp0s25 25,100}$color${endif}
