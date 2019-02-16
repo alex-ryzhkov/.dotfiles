@@ -4,7 +4,7 @@ set page-padding 1
 set scroll-step 160
 #enable system-wide clipboard
 set selection-clipboard clipboard
-#contract $HOME to '~'
+#contract HOME to '~'
 set window-title-home-tilde true
 set statusbar-home-tilde true
 
@@ -37,3 +37,7 @@ map [fullscreen] k scroll up
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
+
+# zathurarc-dark
+set recolor-lightcolor "#1b242b"
+set recolor "true"
