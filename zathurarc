@@ -8,7 +8,7 @@ set selection-clipboard clipboard
 set window-title-home-tilde true
 set statusbar-home-tilde true
 
-map u scroll half-up
+map u scroll full-up
 map [fullscreen] u scroll full-up
 map d scroll full-down
 map [fullscreen] d scroll full-down
