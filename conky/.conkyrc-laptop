@@ -45,10 +45,10 @@ ${offset 20}${cpugraph cpu0}
 ${offset 20}${top name 1}$alignr${top cpu 1}%
 ${offset 20}${top name 2}$alignr${top cpu 2}%
 ${offset 20}${top name 3}$alignr${top cpu 3}%
-${offset 20}${top name 4}$alignr${top cpu 4}%
-${offset 20}${top name 5}$alignr${top cpu 5}%
 
 ${font Terminus:size=12}${color #756969}Memory ${hr 2} ${alignr}${font}$color
+
+${offset 20}Swap: $alignr $swapperc%
 
 ${offset 20}$mem / $memmax $alignr $memperc%
 ${offset 20}$membar
