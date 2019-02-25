@@ -1,0 +1,20 @@
+/*make all ui elements have a nice dark background color*/
+* {
+    background-color: #201F1F;
+    color: #D4D2CF;
+}
+/*for some reason the search field is not affected by the above rule, let's fix it*/
+MainWindow #translateLine, ScanPopup #translateLine {
+    background: #201F1F;
+    color: #D4D2CF;
+}
+/*fix status bar colors*/
+MainStatusBar #text {
+  background-color: #201F1F;
+  color: #D4D2CF;
+}
+/*search field background color if nothing is found*/
+MainWindow #translateLine[noResults="true"],
+ScanPopup #translateLine[noResults="true"] {
+    background: #990f28;
+}
