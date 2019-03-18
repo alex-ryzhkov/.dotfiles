@@ -81,7 +81,12 @@ nnoremap <leader>u :GundoToggle<CR>
 " --------------------------------------------------------------------------------
 " papercolor theme settings
 set t_Co=256   " This is may or may not needed.
-set background=dark
+if strftime("%H") > 17
+    set background=dark
+else
+    set background=light
+endif
+
 colorscheme PaperColor
 " vim airline settings
 let g:airline#extensions#tabline#enabled = 1
