@@ -81,10 +81,10 @@ nnoremap <leader>u :GundoToggle<CR>
 " --------------------------------------------------------------------------------
 " papercolor theme settings
 set t_Co=256   " This is may or may not needed.
-if strftime("%H") > 17
-    set background=dark
-else
+if strftime("%H") > 8 && strftime("%H") < 18
     set background=light
+else
+    set background=dark
 endif
 
 colorscheme PaperColor
