@@ -79,6 +79,10 @@ nnoremap <space> za
 " save session
 nnoremap <leader>s :mksession<CR>
 
+" copy paste
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
 " map NERDTree toggle key
 map <C-n> :NERDTreeToggle<CR>
 
