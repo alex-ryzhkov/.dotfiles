@@ -1,6 +1,4 @@
-" --------------------------------------------------------------------------------
-" VUNDLE SETTINGS
-" --------------------------------------------------------------------------------
+" Vundle settings {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -58,57 +56,69 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" --------------------------------------------------------------------------------
-" KEY MAPPINGS
-" --------------------------------------------------------------------------------
+" }}}
+" Key mappings {{{
+
 " insert new line under and over
 nmap oo o<Esc>k
 nmap OO O<Esc>j
+
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
 " change the mapleader from \ to ,
 let mapleader=','
+
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
 " space open/closes folds
 nnoremap <space> za
+
 " save session
 nnoremap <leader>s :mksession<CR>
+
 " map NERDTree toggle key
 map <C-n> :NERDTreeToggle<CR>
+
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
+
 " shortcutting split navigation, saving a keypress:
     map <C-h> <C-w>h
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
+
 " spell-check set to <leader>o, 'o' for 'orthography':
 map <leader>o :setlocal spell! spelllang=en_us<CR>
-" --------------------------------------------------------------------------------
-" PLUGIN  SETTINGS
-" --------------------------------------------------------------------------------
+" }}}
+" Plugins settings {{{
+
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-" --------------------------------------------------------------------------------
-" VISUAL SETTINGS
-" --------------------------------------------------------------------------------
+" }}}
+" Visual settings {{{
+
 " papercolor theme settings
 set t_Co=256   " This is may or may not needed.
+
+" change background color based on the time of day
 if strftime("%H") > 8 && strftime("%H") < 18
     set background=light
 else
     set background=dark
 endif
-
 colorscheme PaperColor
+
 " vim airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
 " disable keymap indication in left bottom
 let g:airline#extensions#keymap#enabled = 0
 
@@ -145,10 +155,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
+" }}}
+" Editor settings {{{
 
-" --------------------------------------------------------------------------------
-" EDITOR SETTINGS
-" --------------------------------------------------------------------------------
 " configure expanding of tabs for various file types
 " au BufRead,BufNewFile *.py set expandtab
 " au BufRead,BufNewFile *.c set noexpandtab
@@ -181,6 +190,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 augroup END
+
 " configure editor with tabs and nice stuff...
 set expandtab           " enter spaces when tab is pressed
 set textwidth=80        " break lines when line length increases
@@ -197,15 +207,17 @@ set backspace=indent,eol,start
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " splits open at the bottom and right, which is non-retarded, unlike vim defaults.
-    set splitbelow splitright
+set splitbelow splitright
 
-" Automatically deletes all trailing whitespace on save.
+" automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
 syntax enable           " syntax highlighting
 set showcmd             " shows the last command entered in the bottom right
+
 " shows line numbers
 set number relativenumber
+
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
@@ -226,6 +238,8 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on intend level
+" }}}
+" Backups {{{
 
 " move backups to /tmp
 set backup
@@ -233,6 +247,8 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
+" }}}
+" Custom functions {{{
 
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
@@ -245,5 +261,5 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
+" }}}
 " vim:foldmethod=marker:foldlevel=0
