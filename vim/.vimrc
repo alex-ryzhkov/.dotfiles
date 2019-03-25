@@ -33,6 +33,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 " smart undo plugin
 Plugin 'sjl/gundo.vim'
+" ctrlP
+Plugin 'kien/ctrlp.vim'
 " visual stuff plugins
 "
 " papercolor theme
@@ -62,20 +64,35 @@ filetype plugin indent on    " required
 " insert new line under and over
 nmap oo o<Esc>k
 nmap OO O<Esc>j
-" map NERDTree toggle key
-map <C-n> :NERDTreeToggle<CR>
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 " change the mapleader from \ to ,
 let mapleader=','
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
-" comfier key combinations for copy/paste outside vim
-nnoremap <C-V> "+p
-vnoremap <C-C> "+y
+" space open/closes folds
+nnoremap <space> za
+" save session
+nnoremap <leader>s :mksession<CR>
+" map NERDTree toggle key
+map <C-n> :NERDTreeToggle<CR>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
+" shortcutting split navigation, saving a keypress:
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+" spell-check set to <leader>o, 'o' for 'orthography':
+map <leader>o :setlocal spell! spelllang=en_us<CR>
 " --------------------------------------------------------------------------------
 " PLUGIN  SETTINGS
 " --------------------------------------------------------------------------------
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
 " --------------------------------------------------------------------------------
 " VISUAL SETTINGS
 " --------------------------------------------------------------------------------
@@ -133,36 +150,54 @@ let g:airline_symbols.maxlinenr = ''
 " EDITOR SETTINGS
 " --------------------------------------------------------------------------------
 " configure expanding of tabs for various file types
-au BufRead,BufNewFile *.py set expandtab
-au BufRead,BufNewFile *.c set noexpandtab
-au BufRead,BufNewFile *.h set noexpandtab
-au BufRead,BufNewFile Makefile* set noexpandtab
+" au BufRead,BufNewFile *.py set expandtab
+" au BufRead,BufNewFile *.c set noexpandtab
+" au BufRead,BufNewFile *.h set noexpandtab
+" au BufRead,BufNewFile Makefile* set noexpandtab
 
+" language specific changes
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+augroup END
 " configure editor with tabs and nice stuff...
 set expandtab           " enter spaces when tab is pressed
-set textwidth=120       " break lines when line length increases
+set textwidth=80        " break lines when line length increases
 set tabstop=4           " use 4 spaces to represent tab
 set softtabstop=4
 set shiftwidth=4        " number of spaces to use for auto indent
+set modelines=1         " make the last line in this file be a file specific setting for folding
 set autoindent          " copy indent from current line when starting a new line
 
-" make backspaces more powerfull
+" make backspaces more powerful
 set backspace=indent,eol,start
 
-" Disables automatic commenting on newline:
+" disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Spell-check set to <leader>o, 'o' for 'orthography':
-map <leader>o :setlocal spell! spelllang=en_us<CR>
-
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+" splits open at the bottom and right, which is non-retarded, unlike vim defaults.
     set splitbelow splitright
-
-" Shortcutting split navigation, saving a keypress:
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
 
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -188,7 +223,27 @@ set ignorecase          " ignore case when searching
 set smartcase           " ignore case when pattern is all small case
                         " case-sensitive othervise
 set foldenable          " enable folding
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on intend level
 
+" move backups to /tmp
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" vim:foldmethod=marker:foldlevel=0
