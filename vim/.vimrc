@@ -81,6 +81,7 @@ nnoremap <leader>s :mksession<CR>
 
 " copy paste
 vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 " map NERDTree toggle key
