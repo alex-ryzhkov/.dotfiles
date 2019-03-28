@@ -14,9 +14,11 @@
 @-moz-document url-prefix(https://discovery.addons.mozilla.org),
 url-prefix(chrome://),
 url-prefix(about:),
+url-prefix(file:),
 url(https://www.mozilla.org/credits/),
 url-prefix(https://addons.mozilla.org),
 url-prefix(http://addons.mozilla.org),
+url-prefix(https://raw.githubusercontent.com),
 url-prefix(moz-extension),
 url-prefix(view-source),
 regexp(".*\\.(p|P)(d|D)(f|F).*") {
@@ -150,7 +152,7 @@ regexp(".*\\.(p|P)(d|D)(f|F).*") {
     --cm-search-background: rgba(24,29,32,1)!important;
     --cm-red: #de7474!important;
 
-    --dummy-variable-for-updater-scripys: black
+    --dummy-variable-for-updater-scripts: black
   }
 }
 menupopup,
@@ -1296,8 +1298,7 @@ hbox#sidebar-search-container textbox#search-box {
 statuspanel .statuspanel-label {
   background-color: var(--in-content-category-header-background)!important;
   color: var(--in-content-page-color)!important;
-  border: none!important;
-  /* color: rgb(182,34,34)!important */
+  border: none!important
 }
 .tab-line[selected=true] {
   background-color: var(--in-content-border-focus)!important
@@ -1305,10 +1306,10 @@ statuspanel .statuspanel-label {
 /* move statuspanel a little bit higher (in a very strange way) , media query is used
 to respect an old 4:3 display*/
 @media screen and (max-height: 1024px) {
-  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
+  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 64%!important}
 }
 @media screen and (max-height: 768px) {
-  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
+  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 40%!important}
 }
