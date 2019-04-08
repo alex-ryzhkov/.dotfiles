@@ -1,9 +1,9 @@
 rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
-rofi.kb-row-up:                      Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab
-rofi.kb-row-down:                    Down,Control+j
-rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 rofi.terminal:                       xfce4-terminal
+rofi.kb-row-up:                      Up,Control+k,Control+p
+rofi.kb-row-down:                    Down,Control+j,Control+n
+rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 rofi.kb-remove-to-eol:               Control+Shift+e
-rofi.kb-mode-next:                   Shift+Right,Control+Tab,Control+l
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab,Control+h
+rofi.kb-mode-next:                   Control+l,Shift+Right
+rofi.kb-mode-previous:               Control+h,Shift+Left
 rofi.kb-remove-char-back: BackSpace
