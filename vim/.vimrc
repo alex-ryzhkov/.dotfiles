@@ -97,7 +97,7 @@ nnoremap <leader>u :GundoToggle<CR>
     map <C-l> <C-w>l
 
 " spell-check set to <leader>o, 'o' for 'orthography':
-map <leader>o :setlocal spell! spelllang=en_us<CR>
+map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
 " }}}
 " Plugins settings {{{
 
