@@ -4,8 +4,11 @@ BASEDIR="$(pwd)"
 ln -s $BASEDIR/.profile ~/.profile
 #.zshrc
 ln -s $BASEDIR/.zshrc ~/.zshrc
-#.vimrc
+#vim
 ln -s $BASEDIR/vim/.vimrc ~/.vimrc
+mkdir ~/.vim/spell
+ln -s $BASEDIR/vim/ru.utf-8.sug ~/.vim/spell/ru.utf-8.sug
+ln -s $BASEDIR/vim/ru.utf-8.spl ~/.vim/spell/ru.utf-8.spl
 #mpv
 mkdir ~/.config/mpv
 ln -s $BASEDIR/mpv/mpv.conf ~/.config/mpv/mpv.conf
