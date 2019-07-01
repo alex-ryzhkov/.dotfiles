@@ -34,6 +34,8 @@ Plugin 'sjl/gundo.vim'
 " ctrlP
 Plugin 'kien/ctrlp.vim'
 " visual stuff plugins
+" distraction free mode
+Plugin 'junegunn/goyo.vim'
 "
 " papercolor theme
 Plugin 'NLKNguyen/papercolor-theme'
