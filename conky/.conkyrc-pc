@@ -2,7 +2,7 @@
     alignment =  'middle_right',
     maximum_width = 260,
     border_width = 0,
-    font = 'Terminus:size=10',
+    font = 'Terminus:size=12',
     gap_x = 20,
     gap_y = 0,
 
