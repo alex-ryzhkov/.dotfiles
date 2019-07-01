@@ -33,6 +33,10 @@ font pango:monospace 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# disable switching windows with mousewheel
+bindsym button4 nop
+bindsym button5 nop
+
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
@@ -199,6 +203,10 @@ bindsym $mod+Shift+q mode "$mode_system"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        #disable switching workspaces with mouse wheel
+        wheel_up_cmd nop
+        wheel_down_cmd nop
+
         status_command i3status
 }
 bindsym $mod+m exec "~/mount.sh"
