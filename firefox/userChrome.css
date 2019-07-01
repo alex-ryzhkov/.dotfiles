@@ -1315,7 +1315,7 @@ to respect an old 4:3 display*/
 }
 @media screen and (max-height: 1080px) {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 35%!important}
+  .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 32%!important}
 }
 /* hide navigation buttons from the context menu */
 #context-navigation, #context-sep-navigation { display: none !important; }
