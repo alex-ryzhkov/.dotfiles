@@ -1319,3 +1319,36 @@ to respect an old 4:3 display*/
 }
 /* hide navigation buttons from the context menu */
 #context-navigation, #context-sep-navigation { display: none !important; }
+
+/* Increase font size of bookmarks bar, tab titles, etc */
+#toolbar-menubar .menubar-text,
+#toolbar-menubar menuitem,
+#toolbar-menubar menu {
+  font-size: 20px !important;
+}
+
+/* Tab bar */
+#TabsToolbar {
+  font-size: 20px !important;
+}
+
+/* Main Toolbar */
+#nav-bar {
+  font-size: 20px !important;
+}
+
+/* Bookmarks Toolbar */
+#PersonalToolbar,
+#PersonalToolbar menuitem,
+#PersonalToolbar menu {
+  font-size: 20px !important;
+}
+
+/* Context menus (this is not all of them) */
+menupopup[id*="ContextMenu"] menuitem,
+menupopup[id*="ContextMenu"] menu,
+#placesContext menuitem,
+#placesContext menu,
+#backForwardMenu menuitem {
+  font-size: 20px !important;
+}
