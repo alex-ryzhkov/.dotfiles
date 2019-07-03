@@ -337,5 +337,14 @@ endfunction
 
 set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 set laststatus=2
+set wildmenu
+set wcm=<Tab>
+
+" add menu just because why not
+menu Encoding.koi8-u :e ++enc=8bit-koi8-u<CR>
+menu Encoding.windows-1251 :e ++enc=8bit-cp1251<CR>
+menu Encoding.ibm-866 :e ++enc=8bit-ibm866<CR>
+menu Encoding.utf-8 :e ++enc=2byte-utf-8 <CR>
+map <F9> :emenu Encoding.<TAB>
 " }}}
 " vim:foldmethod=marker:foldlevel=0
