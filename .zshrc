@@ -118,6 +118,7 @@ ranger() {
 alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0+0,0 -c:v libx264 -pix_fmt yuv420p -qp 0 -preset ultrafast videorecord.avi'
 alias ls='ls --color -h --group-directories-first'
 alias r='ranger'
+alias c='code'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
