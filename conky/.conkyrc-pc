@@ -1,6 +1,6 @@
  conky.config = {
     alignment =  'middle_right',
-    maximum_width = 260,
+    maximum_width = 280,
     border_width = 0,
     font = 'Terminus:size=12',
     gap_x = 20,
@@ -60,13 +60,13 @@ ${offset 20}${top_mem name 5}$alignr${top_mem mem 5}%
 
 ${font Terminus:size=12}${color #756969}Storage ${hr 2} ${alignr}${font}$color
 
-${offset 20}/ ${offset 37} ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${offset 20}/  ${offset 37} ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
 ${offset 20}${fs_bar /}
 
-${offset 20}/home $alignc ${fs_used /home/yoba} / ${fs_size /home/yoba} $alignr ${fs_used_perc /home/yoba}%
+${offset 20}/home ${fs_used /home/yoba} / ${fs_size /home/yoba} $alignr ${fs_used_perc /home/yoba}%
 ${offset 20}${fs_bar /home/yoba}
 
-${offset 20}/win ${offset 14}$alignc ${fs_used /run/mount/win} / ${fs_size /run/mount/win} $alignr ${fs_used_perc /run/mount/win}%
+${offset 20}/win ${offset 14} ${fs_used /run/mount/win} / ${fs_size /run/mount/win} $alignr ${fs_used_perc /run/mount/win}%
 ${offset 20}${fs_bar /run/mount/win}
 ${color #756969}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
 ${offset 20}${color white}$color ${downspeed wlo1}${alignr}${color white}$color ${upspeed wlo1}
