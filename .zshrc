@@ -119,6 +119,7 @@ alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0
 alias ls='ls --color -h --group-directories-first'
 alias r='ranger'
 alias c='code'
+alias .df='cd ~/.dotfiles'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
