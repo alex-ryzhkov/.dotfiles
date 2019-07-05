@@ -71,7 +71,7 @@ class fzf(Command):
 
     def execute(self):
         import subprocess
-        command="fzf"
+        command="find . -type f -name '*' 2> /dev/null | fzf"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
