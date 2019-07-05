@@ -60,3 +60,23 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+class fzf(Command):
+    """ :fzf
+
+    Locate a file and jump to it using fzf.
+
+    URL: https://github.com/junegunn/fzf
+    """
+
+    def execute(self):
+        import subprocess
+        command="fzf"
+        fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+        stdout, stderr = fzf.communicate()
+        if fzf.returncode == 0:
+            fzf_file = os.path.abspath(stdout.decode('utf-8').rstrip('\n'))
+            if os.path.isdir(fzf_file):
+                self.fm.cd(fzf_file)
+            else:
+                self.fm.select_file(fzf_file)
