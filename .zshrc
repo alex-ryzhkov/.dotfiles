@@ -112,6 +112,15 @@ ranger() {
         exit
     fi
 }
+
+.df() {
+    file_to_edit="$(find $HOME/.dotfiles -type f -not -path '*/\.git/*' | fzf)"
+    result=$?
+    if [ $result -eq 0 ]; then
+        vim $file_to_edit
+    fi
+}
+
 # ----------------------------------------------------------
 # ALIASES
 # ----------------------------------------------------------
@@ -119,7 +128,7 @@ alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0
 alias ls='ls --color -h --group-directories-first'
 alias r='ranger'
 alias c='code'
-alias .df='cd ~/.dotfiles'
+alias cdf='cd ~/.dotfiles'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
