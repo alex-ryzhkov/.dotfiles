@@ -44,6 +44,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " python syntax highlight improved
 Plugin 'hdima/python-syntax'
+" fzf plugin
+Plugin 'junegunn/fzf'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
