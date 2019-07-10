@@ -46,6 +46,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'hdima/python-syntax'
 " fzf plugin
 Plugin 'junegunn/fzf'
+" codi plugin for REPL
+Plugin 'metakirby5/codi.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -102,6 +104,12 @@ nnoremap <leader>u :GundoToggle<CR>
 
 " spell-check set to <leader>o, 'o' for 'orthography':
 map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
+
+" make it possible to move while in insert mode
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 " }}}
 " Plugins settings {{{
 
