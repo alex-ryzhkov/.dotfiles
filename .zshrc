@@ -166,3 +166,4 @@ alias cdf='cd ~/.dotfiles'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
+alias free='free -h'
