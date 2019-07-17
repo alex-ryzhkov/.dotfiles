@@ -110,6 +110,14 @@ inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+" buttons for going to previous/next file (buffer)
+map <F2> :bprevious<CR>
+map <F3> :bnext<CR>
+" show a list of files (buffers) that are open
+map <F4> :buffers<CR>
+" close current buffer
+map <F12> :bd!<CR>
 " }}}
 " Plugins settings {{{
 
@@ -174,6 +182,9 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 " }}}
 " Editor settings {{{
+
+" hide startup message
+set shortmess+=I
 
 " configure expanding of tabs for various file types
 au BufRead,BufNewFile *.py set expandtab
