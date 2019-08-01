@@ -6,5 +6,4 @@ export gtk2_rc_files="$home/.gtkrc-2.0"
 export GOPATH=$HOME/work/go
 export GOBIN=$HOME/work/go/bin
 export PATH=$PATH:$GOPATH/bin:$HOME/work/python/scripts
-export FZF_COMPLETION_TRIGGER=''
 setxkbmap -option caps:swapescape
