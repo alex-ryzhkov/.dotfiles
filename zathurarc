@@ -39,5 +39,5 @@ map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
 # zathurarc-dark
-set recolor-lightcolor "#1b242b"
+set recolor-lightcolor "#093145"
 set recolor "true"
