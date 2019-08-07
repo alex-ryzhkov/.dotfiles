@@ -246,3 +246,4 @@ exec --no-startup-id conky -p 40
 exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie -asN &
 exec --no-startup-id unclutter -b
+exec --no-startup-id xset s off
