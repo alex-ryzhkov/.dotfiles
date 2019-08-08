@@ -1,0 +1,42 @@
+* {
+    font-size: 18px !important;
+    font-family: 'Arial', sans-serif !important;
+}
+
+/*  Folderpane & Messagepane */
+treechildren {
+    background-color: #093145 !important;
+    color: #cccccc !important;
+    font-size: 20px !important;
+    font-family: 'Arial', sans-serif !important;
+}
+
+treechildren::-moz-tree-row {
+    border: 1px solid transparent !important;
+    background-color: #093145 !important;
+}
+
+/*#folderTree > treechildren::-moz-tree-cell-text(hover) {
+    color: #FFA500 !important;
+}*/
+
+/* Selected item in sidebar */
+#folderTree > treechildren::-moz-tree-cell-text(selected) {
+    background-color: #b54305 !important;
+    color: #093145 !important;
+}
+
+/* Selected email title background color  */
+#threadTree treechildren::-moz-tree-row(selected) {
+    background-color: #b54305 !important;
+}
+
+/* Selected email title text color */
+#threadTree treechildren:-moz-tree-cell-text(selected) {
+    color: #093145 !important;
+}
+
+/* Attachment icon */
+treechildren::-moz-tree-image(attachmentCol, attach) {
+    background-color: #ffcc00 !important;
+}
