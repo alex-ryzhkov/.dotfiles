@@ -16,5 +16,5 @@ MainStatusBar #text {
 /*search field background color if nothing is found*/
 MainWindow #translateLine[noResults="true"],
 ScanPopup #translateLine[noResults="true"] {
-    background: #990f28;
+    background: #561a1a;
 }

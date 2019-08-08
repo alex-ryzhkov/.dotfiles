@@ -4,9 +4,10 @@ body
   margin-right: 3px;
   margin-left:  2px;
   margin-bottom: 3px;
-  background: #201F1F;
-  color: white;
+  background: #093145;
+  color: #cccccc;
   font-family: Bookerly, Segoe UI, Palatino Linotype, Arial Unicode MS;
+  font-size: 16px;
 }
 
 a:link
@@ -16,17 +17,17 @@ a:link
 
 ul
 {
-  color: white;
+  color: #cccccc;
 }
 
 .gdarticle
 {
-  background: #201F1F;
-  color: white;
+  background: #093145;
+  color: #cccccc;
   margin-top: 0.1em;
   margin-bottom: 0.4em;
   padding: 5px;
-  border: 1px solid white;
+  border: 1px solid #cccccc;
 }
 
 .gdactivearticle
@@ -98,7 +99,7 @@ ul
 
 .dsl_article, .dsl_definition, .dsl_ex, .dsl_opt, .dsl_lang, .dsl_m0, .dsl_m1, .dsl_m2, .dsl_m3, .dsl_m4, .dsl_u, .dsl_b, .dsl_i
 {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 .dsl_p {
@@ -122,7 +123,7 @@ ul
 }
 
 .dsl_i font {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 .dsl_article .dsl_definition {
@@ -166,7 +167,7 @@ ul
 
 .dsl_article .dsl_definition font[color="dimgray"]
 {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 .dsl_article .dsl_definition font[color="green"]
@@ -182,12 +183,12 @@ ul
 ::selection
 {
   background: yellow;
-	color: white;
+	color: #cccccc;
 }
 
 code::selection
 {
-	background: white;
+	background: #cccccc;
 }
 
 .dsl_s_wav img, .lsa_play img, .forvo_play img[alt="Play"]
@@ -199,7 +200,7 @@ code::selection
 
 .dsl_s_wav a, .lsa_play td:nth-of-type(1) a, .forvo_play td:nth-of-type(1) a
 {
-  color: white;
+  color: #cccccc;
   width: 18px;
   height: 14px;
   /**
@@ -217,14 +218,14 @@ code::selection
 
 .mdict, .mdict ol, .head-jump-pos, .head-jump-entry, .h-g, sn-gs, .sn-g, .x-gs, .xg, .rx-g, .x, .num, .def, .label-g, .collapse
 {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 .head-jump-pos a
 {
   display: inline-block;
   background-color: green;
-  color: white !important;
+  color: #cccccc !important;
   padding-top: 2px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -299,7 +300,7 @@ code::selection
 
 .entry, .example, .collocate, .collgloss, .sense, .neutral, .exas li
 {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 .hyphenation, .homnum, .frequent
@@ -341,7 +342,7 @@ code::selection
 
 .grambox .expl, .grambox .compareword, .collobox .section, .thesbox .section
 {
-  background-color: #201F1F !important;
+  background-color: #093145 !important;
 }
 
 .secheading
@@ -353,9 +354,9 @@ code::selection
  */
 table, #definition_T_id, #mh_n_T_id, #mh_T_id, #C_C
 {
-  color: white !important;
+  color: #cccccc !important;
 }
 
 #C_C font {
-  color: white !important;
+  color: #cccccc !important;
 }
