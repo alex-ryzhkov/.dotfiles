@@ -13,6 +13,8 @@
 new_window pixel 0
 default_border pixel 3
 workspace_layout stacking
+# Change some colors
+client.focused          #4c7899 #005f87 #ffffff #2e9ef4 #0087af
 
 set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
