@@ -155,6 +155,13 @@ fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
+lsg() {
+  keyword=$(echo "$@" |  sed 's/ /.*/g')
+  ls -hlA --color=yes \
+  | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}' \
+  | grep -iE $keyword
+}
 # ----------------------------------------------------------
 # ALIASES
 # ----------------------------------------------------------
@@ -162,6 +169,7 @@ alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0
 alias ls='ls --color -h --group-directories-first'
 alias r='ranger'
 alias c='code'
+alias mutt='neomutt'
 alias cdf='cd ~/.dotfiles'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
