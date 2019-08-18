@@ -170,6 +170,7 @@ alias ls='ls --color -h --group-directories-first'
 alias r='ranger'
 alias c='code'
 alias mutt='neomutt'
+alias news='newsboat'
 alias cdf='cd ~/.dotfiles'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
