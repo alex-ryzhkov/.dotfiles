@@ -192,7 +192,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym --release $mod+Escape exec --no-startup-id xkill
 
 # Make a screenshot
-bindsym Print exec flameshot gui
+bindsym Print exec scrot
+bindsym Shift+Print exec flameshot gui
 
 # Create a log out menu
 set $Locker i3lock --color=000000 --show-failed-attempts && sleep 1
