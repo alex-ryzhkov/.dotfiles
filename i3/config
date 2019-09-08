@@ -231,6 +231,7 @@ assign [class="Firefox"] 1
 #assign [class="Xfce4-terminal"] 2
 assign [class="Anki"] 3
 assign [title="ranger"] 2
+assign [title="newsboat"] 2
 assign [class="Gens"] 3
 assign [class="QOwnNotes"] 3
 assign [class="Zathura"] 3
