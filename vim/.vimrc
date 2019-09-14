@@ -140,11 +140,12 @@ let g:ctrlp_working_path_mode = 0
 set t_Co=256   " This is may or may not needed.
 
 " change background color based on the time of day
-if strftime("%H") > 8 && strftime("%H") < 18
-    set background=light
-else
-    set background=dark
-endif
+" if strftime("%H") > 8 && strftime("%H") < 18
+"     set background=light
+" else
+"     set background=dark
+" endif
+set background=dark
 colorscheme PaperColor
 
 " vim airline settings
