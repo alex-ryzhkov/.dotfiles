@@ -251,3 +251,5 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie -asN &
 exec --no-startup-id unclutter -b
 exec --no-startup-id xset s off
+exec --no-startup-id compton -b
+exec --no-startup-id feh --bg-fill ~/pictures/wallpapers/forest_trees_fog_110131_2560x1080.jpg
