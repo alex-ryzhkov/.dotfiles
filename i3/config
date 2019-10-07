@@ -40,7 +40,7 @@ bindsym button4 nop
 bindsym button5 nop
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+slash kill
