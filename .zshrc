@@ -180,6 +180,7 @@ alias news='newsboat'
 alias cdf='cd ~/.dotfiles'
 alias cdpkg='cd /var/cache/pacman/pkg'
 alias cdlg='cd /var/log'
+alias less='less -i'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
