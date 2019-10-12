@@ -126,6 +126,10 @@ map <F3> :bnext<CR>
 map <F4> :buffers<CR>
 " close current buffer
 map <F12> :bd!<CR>
+
+" get a command under the cursor, execute it in shell
+" paste the result into the current file
+nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
 " }}}
 " Plugins settings {{{
 
