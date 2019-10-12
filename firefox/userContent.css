@@ -15,3 +15,9 @@
     scrollbar-width: thin !important;
   }
 }
+/* make selected and found text more noticeable */
+*::selection {
+  /* This is the background color */
+  background: #FF0000 !important;
+  /* This is the text color */
+color: #000000 !important}
