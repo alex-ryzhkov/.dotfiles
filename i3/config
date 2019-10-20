@@ -218,8 +218,19 @@ bar {
         #disable switching workspaces with mouse wheel
         wheel_up_cmd nop
         wheel_down_cmd nop
-
-        status_command i3status
+        #install ttf-font-awesome-4 from AUR for icons
+        font pango:monospace, FontAwesome 14
+        position bottom
+        status_command i3status-rs ~/.config/i3/status.toml
+    colors {
+        separator #666666
+        background #424242
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #535353 #535353 #ffffff
+        inactive_workspace #535353 #535353 #ffffff
+        urgent_workspace #2f343a #900000 #ffffff
+    }
 }
 bindsym $mod+m exec "~/mount.sh"
 bindsym $mod+Shift+m exec "~/unmount.sh"
