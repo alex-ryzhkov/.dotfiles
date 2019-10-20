@@ -218,7 +218,8 @@ bar {
         #disable switching workspaces with mouse wheel
         wheel_up_cmd nop
         wheel_down_cmd nop
-        font pango: monospace 14
+        #install ttf-font-awesome-4 from AUR for icons
+        font pango:monospace, FontAwesome 14
         position bottom
         status_command i3status-rs ~/.config/i3/status.toml
     colors {

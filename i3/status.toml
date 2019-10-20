@@ -1,17 +1,9 @@
-[theme]
-name = "slick"
+theme = "slick"
 
-icons = "none"
+icons = "awesome"
 
 [[block]]
 block = "sound"
-
-[[block]]
-block = "net"
-device = "wlo1"
-ssid = false
-speed_up = false
-speed_down = false
 
 [[block]]
 block = "net"
@@ -21,11 +13,18 @@ speed_down = false
 signal_strength = true
 
 [[block]]
+block = "net"
+device = "wlo1"
+ssid = false
+speed_up = false
+speed_down = false
+
+[[block]]
 block = "time"
 interval = 60
-format = "%d-%m %a %R "
+format = "%R %a %d %b"
 
 [[block]]
 block = "custom"
-command = "~/layout.sh"
+command = "~/.scripts/layout.sh"
 interval = 1
