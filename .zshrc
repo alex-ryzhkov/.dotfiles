@@ -172,7 +172,7 @@ lsg() {
 # ALIASES
 # ----------------------------------------------------------
 alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0+0,0 -c:v libx264 -pix_fmt yuv420p -qp 0 -preset ultrafast videorecord.avi'
-alias ls='ls --color -h --group-directories-first'
+alias ls='ls --color=auto -h --group-directories-first'
 alias r='ranger'
 alias c='code'
 alias mutt='neomutt'
