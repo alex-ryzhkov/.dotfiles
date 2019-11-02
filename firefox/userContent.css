@@ -17,7 +17,6 @@
 }
 /* make selected and found text more noticeable */
 *::selection {
-  /* This is the background color */
-  background: #45a1ff !important;
-  /* This is the text color */
-color: #ffffff !important}
+    background: #45a1ff !important;
+    color: #ffffff !important
+}
