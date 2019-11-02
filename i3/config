@@ -251,6 +251,14 @@ assign [class="Thunderbird"] 8
 assign [class="mpv"] 9
 #for_window [title="ranger$"] move window to workspace 3
 
+# Make sure that pop-up windows will float so they won't take the whole workspace
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
 # Set 'wallpaper'
 exec --no-startup-id xsetroot -solid "#002244"
 
