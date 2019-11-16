@@ -18,3 +18,100 @@ MainWindow #translateLine[noResults="true"],
 ScanPopup #translateLine[noResults="true"] {
     background: #561a1a;
 }
+/*select top menu*/
+/** [class*="Bar"] {
+    background-color: #201F1F;
+}*/
+/* QListView { */
+/*     background-color: white; */
+/*     color: black; */
+/* } */
+/* QScrollBar:vertical{ */
+/*     background-color: red; */
+/* } */
+/* QScrollBar:horizontal{ */
+/*     background-color: red; */
+/* } */
+
+/* QScrollArea { */
+/*     background: yellow; */
+/*     color: yellow; */
+/* } */
+/* QScrollBar:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::handle:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::handle:horizontal:hover { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::handle:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::handle:vertical:hover { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-line:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-line:horizontal:hover, QScrollBar::add-line:horizontal:on { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-line:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::sub-line:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::sub-line:horizontal:hover, QScrollBar::sub-line:horizontal:on { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::sub-line:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal { */
+/*   background-color: yellow; */
+/* } */
+
+/* QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { */
+/*   background-color: yellow; */
+/* } */
+
+--------------------------------------------------------------------------- */
+/* QAbstractScrollArea { */
+/*   background-color: yellow; */
+/*   color: yellow; */
+/* } */
+
