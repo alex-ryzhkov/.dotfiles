@@ -25,6 +25,11 @@ ln -fs $BASEDIR/goldendict/config ~/.goldendict/config
 #rofi
 mkdir -p ~/.config/rofi
 ln -fs $BASEDIR/rofi/config ~/.config/rofi/config
+#youtube-dl
+mkdir -p ~/.config/youtube-dl
+ln -fs $BASEDIR/youtube-dl/config ~/.config/youtube-dl/config
+#compton
+ln -fs $BASEDIR/compton.conf ~/.config/compton.conf
 #ranger
 mkdir -p ~/.config/ranger
 ln -fs $BASEDIR/ranger/commands_full.py ~/.config/ranger/commands_full.py

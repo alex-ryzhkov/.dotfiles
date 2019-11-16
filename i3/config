@@ -23,10 +23,10 @@ font pango:monospace 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--15-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
@@ -35,72 +35,72 @@ font pango:monospace 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# disable switching windows with mousewheel
+# Disable switching windows with mousewheel
 bindsym button4 nop
 bindsym button5 nop
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec termite
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+slash kill
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun
+# Start dmenu (a program launcher)
+# bindsym $mod+d exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left 40
 bindsym $mod+Shift+j move down 40
 bindsym $mod+Shift+k move up 40
 bindsym $mod+Shift+l move right 40
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left 40
 bindsym $mod+Shift+Down move down 40
 bindsym $mod+Shift+Up move up 40
 bindsym $mod+Shift+Right move right 40
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+apostrophe split horizontal
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+slash split vertical
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
+# Focus the child container
 bindsym $mod+Shift+a focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -116,7 +116,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws0 "0"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -126,9 +126,9 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+bindsym $mod+0 exec --no-startup-id ~/.scripts/i3_show_desktop.sh
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -143,33 +143,28 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+s move scratchpad
 # Toggle scratchpad
 bindsym $mod+Shift+Return scratchpad show
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# Resize a window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+        # Same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # Back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Caps_Lock mode "default"
         bindsym $mod+r mode "default"
@@ -180,20 +175,20 @@ bindsym $mod+r mode "resize"
 exec "setxkbmap -layout us,ru -option grp:win_space_toggle"
 
 # Control brightness
-bindsym XF86MonBrightnessDown exec "sudo /home/yoba/brightness -"
-bindsym XF86MonBrightnessUp exec "sudo /home/yoba/brightness +"
+bindsym XF86MonBrightnessDown exec --no-startup-id "sudo ~/brightness -"
+bindsym XF86MonBrightnessUp exec --no-startup-id "sudo ~/brightness +"
 
 # Control volume
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%-"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Kill apps in a comfy way
 bindsym --release $mod+Shift+x exec --no-startup-id xkill
 
 # Make a screenshot
-bindsym Print exec scrot
-bindsym $mod+Print exec flameshot gui
+bindsym Print exec --no-startup-id scrot
+bindsym $mod+Print exec --no-startup-id flameshot gui
 
 # Create a log out menu
 set $Locker i3lock --color=000000 --show-failed-attempts && sleep 1
@@ -206,19 +201,20 @@ mode "$mode_system" {
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # back to normal: Enter or Escape
+    # Back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+q mode "$mode_system"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        #disable switching workspaces with mouse wheel
+        # Disable switching workspaces with mouse wheel
         wheel_up_cmd nop
         wheel_down_cmd nop
-        #install ttf-font-awesome-4 from AUR for icons
+        # Install ttf-font-awesome-4 from AUR for icons
         font pango:monospace, FontAwesome 14
         position bottom
         status_command i3status-rs ~/.config/i3/status.toml
@@ -232,26 +228,28 @@ bar {
         urgent_workspace #d75f00 #d75f00 #1e1107
     }
 }
-bindsym $mod+m exec "~/mount.sh"
-bindsym $mod+Shift+m exec "~/unmount.sh"
-bindsym $mod+y exec ~/yt_script.sh
-bindsym $mod+g [class="GoldenDict"] focus
+bindsym $mod+y exec --no-startup-id ~/.scripts/yt_script.sh
+bindsym $mod+Shift+n [class="GoldenDict"] scratchpad show
+bindsym $mod+Shift+m [title="mocp"] scratchpad show
 
 # Assign some programs their own workspaces
-assign [class="Firefox"] 1
-#assign [class="Xfce4-terminal"] 2
-assign [class="Anki"] 3
+assign [class="firefox"] 1
+assign [class="Anki"] 1
+assign [class="Zathura"] 1
 assign [title="ranger"] 2
 assign [title="newsboat"] 2
 assign [class="Gens"] 3
 assign [class="QOwnNotes"] 3
-assign [class="Zathura"] 3
 assign [class="Telegram"] 8
 assign [class="Thunderbird"] 8
 assign [class="mpv"] 9
-#for_window [title="ranger$"] move window to workspace 3
 
-# Make sure that pop-up windows will float so they won't take the whole workspace
+for_window [class="GoldenDict"] move scratchpad
+for_window [title="mocp"] move scratchpad
+for_window [title="qBittorrent"] floating enable
+for_window [title="qBittorrent"] resize set 1900 800
+
+# Make sure pop-up windows will float so they won't take the whole workspace
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -259,16 +257,22 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-# Set 'wallpaper'
-exec --no-startup-id xsetroot -solid "#002244"
+# Set a wallpaper
+exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 
 # Autostart
 exec --no-startup-id dropbox start
 exec --no-startup-id goldendict
+exec --no-startup-id "termite -t mocp -e mocp"
 exec --no-startup-id conky -p 40
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
 exec --no-startup-id unclutter -b
 exec --no-startup-id xset s off
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/pictures/wallpapers/forest_trees_fog_110131_2560x1080.jpg
+exec --no-startup-id "~/.dotfiles/i3/load_layout.sh "
+exec --no-startup-id telegram-desktop
+exec --no-startup-id discord
+exec --no-startup-id "termite -t newsboat -e newsboat"
+exec --no-startup-id "termite -t ranger -e ranger"
+exec --no-startup-id firefox

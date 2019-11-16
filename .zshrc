@@ -63,7 +63,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git sudo extract fzf
+  git sudo extract vi-mode fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,6 +107,7 @@ bindkey '^e' edit-command-line
 # ----------------------------------------------------------
 export EDITOR=vim
 export VISUAL=$EDITOR
+export MYTERM=termite
 # ----------------------------------------------------------
 # CUSTOM FUNCTIONS
 # ----------------------------------------------------------
@@ -123,29 +124,29 @@ ranger() {
     file_to_edit="$(find $HOME/.dotfiles -type f -not -path '*/\.git/*' | fzf)"
     result=$?
     if [ $result -eq 0 ]; then
-        vim $file_to_edit
+        $EDITOR $file_to_edit
     fi
 }
 
 fd() {
-  local dir
-  dir=$(find -L ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+    local dir
+    dir=$(find -L ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 cf() {
-  local file
+    local file
 
-  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+    file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
 
-  if [[ -n $file ]]
-  then
-     if [[ -d $file ]]
-     then
+    if [[ -n $file ]]
+    then
+        if [[ -d $file ]]
+    then
         cd -- $file
-     else
+    else
         cd -- ${file:h}
-     fi
-  fi
+        fi
+    fi
 }
 
 fkill() {
@@ -163,11 +164,41 @@ fkill() {
 }
 
 lsg() {
-  keyword=$(echo "$@" |  sed 's/ /.*/g')
-  ls -hlA --color=yes \
-  | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}' \
-  | grep -iE $keyword
+    keyword=$(echo "$@" |  sed 's/ /.*/g')
+    ls -hlA --color=yes \
+    | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}' \
+    | grep -iE $keyword
 }
+
+start_tmux() {
+    # Start tmux by default when terminal is opened
+    if [[ $DISPLAY ]]; then
+        # If not running interactively, do not do anything
+        [[ $- != *i* ]] && return
+        [[ -z "$TMUX" ]] && exec tmux
+    fi
+}
+
+ts() {
+    if [ $# -eq 0 ]; then
+        $MYTERM -e "tmux new-session"
+    elif [ $# -eq 1 ]; then
+        $MYTERM -e "tmux new-session -s $1"
+    else
+        echo ".zshrc ts(): Too many arguments"
+    fi
+}
+
+ta() {
+    if [ $# -eq 0 ]; then
+        echo "Specify a tmux session name to attach to"
+    elif [ $# -eq 1 ]; then
+        $MYTERM -e "tmux attach -t $1"
+    else
+        echo ".zshrc ta(): Too many arguments"
+    fi
+}
+
 # ----------------------------------------------------------
 # ALIASES
 # ----------------------------------------------------------
@@ -181,7 +212,10 @@ alias cdf='cd ~/.dotfiles'
 alias cdpkg='cd /var/cache/pacman/pkg'
 alias cdlg='cd /var/log'
 alias less='less -i'
+alias tls='tmux ls'
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
 alias free='free -h'
+
+start_tmux

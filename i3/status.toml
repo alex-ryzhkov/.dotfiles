@@ -1,4 +1,4 @@
-theme = "slick"
+theme = "modern"
 
 icons = "awesome"
 
@@ -7,22 +7,14 @@ block = "sound"
 
 [[block]]
 block = "net"
-device = "enp2s0"
-speed_up = false
-speed_down = false
-signal_strength = true
-
-[[block]]
-block = "net"
-device = "wlo1"
-ssid = false
+device = "enp0s31f6"
 speed_up = false
 speed_down = false
 
 [[block]]
 block = "time"
 interval = 60
-format = "%R %a %d %b"
+format = "%R   %a %d %b"
 
 [[block]]
 block = "custom"

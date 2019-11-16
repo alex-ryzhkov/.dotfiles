@@ -182,13 +182,14 @@ ul
 
 ::selection
 {
-  background: yellow;
-	color: #cccccc;
+    background: #45a1ff !important;
+    color: #ffffff !important
 }
 
 code::selection
 {
-	background: #cccccc;
+    background: #45a1ff !important;
+    color: #ffffff !important
 }
 
 .dsl_s_wav img, .lsa_play img, .forvo_play img[alt="Play"]

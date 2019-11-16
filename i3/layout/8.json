@@ -1,0 +1,62 @@
+// vim:ts=4:sw=4:et
+{
+    // stacked split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1049,
+               "width": 1786,
+               "x": 3,
+               "y": 3
+            },
+            "name": "Activity - Discord",
+            "percent": 1,
+            "swallows": [
+               {
+                "title": ".*Discord$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // stacked split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1049,
+               "width": 762,
+               "x": 1795,
+               "y": 3
+            },
+            "name": "Telegram",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^TelegramDesktop$",
+                "instance": "^telegram\\-desktop$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
