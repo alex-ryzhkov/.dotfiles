@@ -1,20 +1,16 @@
-" Vundle settings {{{
+" Plugin manager settings {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -23,41 +19,41 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 " nerdtree plugin
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " smart undo plugin
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 " ctrlP
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " visual stuff plugins
 " distraction free mode
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 "
 " papercolor theme
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 " airline status line and themes
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " python syntax highlight improved
-Plugin 'hdima/python-syntax'
+Plug 'hdima/python-syntax'
 " fzf plugin
-Plugin 'junegunn/fzf'
+Plug 'junegunn/fzf'
 " codi plugin for REPL
-Plugin 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 " comments
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " todo list
-Plugin 'jkramer/vim-checkbox'
+Plug 'jkramer/vim-checkbox'
 " easymotion
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " surroundings
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

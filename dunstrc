@@ -3,7 +3,7 @@
     color = "#212121"
 
 [urgency_low]
-    background = "#000000"
+    background = "#1c1c1c"
     foreground = "#ffffff"
     timeout = 10
 

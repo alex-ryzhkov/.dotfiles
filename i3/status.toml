@@ -1,6 +1,10 @@
-theme = "modern"
-
-icons = "awesome"
+[theme]
+name = "modern"
+[theme.overrides]
+idle_bg = "#1c1c1c"
+idle_fg = "#e4e4e4"
+[icons]
+name = "awesome"
 
 [[block]]
 block = "sound"

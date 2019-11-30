@@ -1,3 +1,4 @@
+# {{{ standart oh-my-zsh boilerplate
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -96,126 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# ----------------------------------------------------------
-# KEYBINDINGS
-# ---- ------------------------------------------------------
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-# ----------------------------------------------------------
-# EXPORT VARIABLES
-# ----------------------------------------------------------
-export EDITOR=vim
-export VISUAL=$EDITOR
-export MYTERM=termite
-# ----------------------------------------------------------
-# CUSTOM FUNCTIONS
-# ----------------------------------------------------------
-# Prevent ranger nested instances
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
+# }}}
 
-.df() {
-    file_to_edit="$(find $HOME/.dotfiles -type f -not -path '*/\.git/*' | fzf)"
-    result=$?
-    if [ $result -eq 0 ]; then
-        $EDITOR $file_to_edit
-    fi
-}
+# Source external files
+source ~/.zsh_functions
+source ~/.zsh_aliases
 
-fd() {
-    local dir
-    dir=$(find -L ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
+# Run tmux when a terminal is opened by default
+run_tmux
 
-cf() {
-    local file
-
-    file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
-
-    if [[ -n $file ]]
-    then
-        if [[ -d $file ]]
-    then
-        cd -- $file
-    else
-        cd -- ${file:h}
-        fi
-    fi
-}
-
-fkill() {
-    local pid
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi
-
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi
-}
-
-lsg() {
-    keyword=$(echo "$@" |  sed 's/ /.*/g')
-    ls -hlA --color=yes \
-    | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}' \
-    | grep -iE $keyword
-}
-
-start_tmux() {
-    # Start tmux by default when terminal is opened
-    if [[ $DISPLAY ]]; then
-        # If not running interactively, do not do anything
-        [[ $- != *i* ]] && return
-        [[ -z "$TMUX" ]] && exec tmux
-    fi
-}
-
-ts() {
-    if [ $# -eq 0 ]; then
-        $MYTERM -e "tmux new-session"
-    elif [ $# -eq 1 ]; then
-        $MYTERM -e "tmux new-session -s $1"
-    else
-        echo ".zshrc ts(): Too many arguments"
-    fi
-}
-
-ta() {
-    if [ $# -eq 0 ]; then
-        echo "Specify a tmux session name to attach to"
-    elif [ $# -eq 1 ]; then
-        $MYTERM -e "tmux attach -t $1"
-    else
-        echo ".zshrc ta(): Too many arguments"
-    fi
-}
-
-# ----------------------------------------------------------
-# ALIASES
-# ----------------------------------------------------------
-alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0+0,0 -c:v libx264 -pix_fmt yuv420p -qp 0 -preset ultrafast videorecord.avi'
-alias ls='ls --color=auto -h --group-directories-first'
-alias r='ranger'
-alias c='code'
-alias mutt='neomutt'
-alias news='newsboat'
-alias cdf='cd ~/.dotfiles'
-alias cdpkg='cd /var/cache/pacman/pkg'
-alias cdlg='cd /var/log'
-alias less='less -i'
-alias tls='tmux ls'
-# Internet
-alias yt="youtube-dl --add-metadata -ic" # Download video link
-alias yta="yt -x -f bestaudio/best" # Download only audio
-alias free='free -h'
-
-start_tmux
+# vim:foldmethod=marker:foldlevel=0
