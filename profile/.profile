@@ -9,6 +9,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export EDITOR=vim
 export VISUAL=$EDITOR
 export MYTERM=termite
+export DOTFILES=~/.dotfiles
 # Make systemctl output colorful
 export SYSTEMD_COLORS=true
 # Set $PATH {{{

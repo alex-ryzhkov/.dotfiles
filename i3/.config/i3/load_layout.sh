@@ -1,5 +1,5 @@
 #!/bin/sh
-for layout in ~/.dotfiles/i3/layout/*
+for layout in ~/.config/i3/layout/*
 do
     workspace=$(basename -s .json $layout)
     i3-msg "workspace $workspace; append_layout $layout"

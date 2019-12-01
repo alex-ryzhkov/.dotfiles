@@ -8,7 +8,7 @@ ranger() {
 }
 
 .df() {
-    file_to_edit="$(find $HOME/.dotfiles -type f -not -path '*/\.git/*' | fzf)"
+    file_to_edit="$(find $DOTFILES -type f -not -path '*/\.git/*' | fzf)"
     result=$?
     if [ $result -eq 0 ]; then
         $EDITOR $file_to_edit
