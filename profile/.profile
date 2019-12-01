@@ -11,7 +11,6 @@ export VISUAL=$EDITOR
 export MYTERM=termite
 # Make systemctl output colorful
 export SYSTEMD_COLORS=true
-export DOTFILES=~/.dotfiles
 # Set $PATH {{{
 # http://askubuntu.com/questions/49784/how-is-bin-added-to-my-path
 # Locally installed package

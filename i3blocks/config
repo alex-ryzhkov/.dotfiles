@@ -1,3 +1,0 @@
-[keymap]
-command=xkb-switch -W
-interval=persist
