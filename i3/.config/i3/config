@@ -179,12 +179,13 @@ bindsym Print exec --no-startup-id scrot
 bindsym $mod+Print exec --no-startup-id flameshot gui
 
 # Create a log out menu
-set $Locker i3lock --color=000000 --show-failed-attempts && sleep 1
+#set $Locker i3lock -i /tmp/blur_screenshot.png --show-failed-attempts && sleep 1
+set $Locker i3lock -i /tmp/blur_screenshot.png --show-failed-attempts
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id ~/.scripts/blur_screenshot.sh && $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym s exec --no-startup-id ~/.scripts/blur_screenshot.sh && $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
