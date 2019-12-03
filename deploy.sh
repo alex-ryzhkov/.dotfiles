@@ -9,12 +9,12 @@ for i in *; do
     # actual dotfiles and we won't create symlinks to README.md etc
     if [[ -d $i ]]; then
         # The following check is necessary because I don't want to stow
-        # Mozilla's app settings since I add them by hand, but I do want to
+        # Mozilla's apps settings since I add them by hand, but I do want to
         # store them in git.
         if [[ $i == "firefox" || $i == "thunderbird" ]]; then
             continue
         else
-           stow $i
+           stow --target=$HOME $i
            # Just making sure everything is ok
            if [[ $? -eq 0 ]]; then
                echo "$i was successfully deployed"
