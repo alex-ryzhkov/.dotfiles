@@ -15,11 +15,17 @@ for i in *; do
             continue
         else
            stow --target=$HOME $i
-           # Just making sure everything is ok
-           if [[ $? -eq 0 ]]; then
-               echo "$i was successfully deployed"
+           end_status=$?
+           # Format output in a nice, legible way
+           # Src: https://stackoverflow.com/questions/4409399/padding-characters-in-printf
+           pad=$(printf '%0.1s' " "{1..20})
+           padlength=20
+           printf 'Deploying %s' "$i"
+           printf '%*.*s' 0 $((padlength - ${#i})) "$pad"
+           if [[ $end_status -eq 0 ]]; then
+               printf 'OK\n'
            else
-               echo "There is a problem with $i"
+               printf 'FAIL\n'
            fi
         fi
     fi
