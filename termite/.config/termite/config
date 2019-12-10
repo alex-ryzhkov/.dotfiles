@@ -40,56 +40,46 @@ scrollback_lines = 10000
 
 # "off", "left" or "right"
 #scrollbar = off
+
 [colors]
-# Base16 {{scheme-name}}
-# Author: {{scheme-author}}
 
-foreground          = #d0d0d0
-foreground_bold     = #f3f3f3
-cursor              = #f3f3f3
-cursor_foreground   = #262626
-background          = #1c1c1c
+# special
+foreground      = #4d4d4c
+foreground_bold = #4d4d4c
+cursor          = #4d4d4c
+background      = #eeeeee
 
-# 16 color space
+# black
+color0  = #ededed
+color8  = #969694
 
-# Black, Gray, Silver, White
-color0  = #262626
-color8  = #808080
-color7  = #d0d0d0
-color15 = #f3f3f3
+# red
+color1  = #d7005f
+color9  = #d7005f
 
-# Red
-color1  = #af87af
-color9  = #af87af
+# green
+color2  = #718c00
+color10 = #718c00
 
-# Green
-color2  = #dfaf5f
-color10 = #dfaf5f
+# yellow
+color3  = #d75f00
+color11 = #d75f00
 
-# Yellow
-color3  = #00afaf
-color11 = #00afaf
+# blue
+color4  = #4271ae
+color12 = #4271ae
 
-# Blue
-color4  = #df875f
-color12 = #df875f
+# magenta
+color5  = #8959a8
+color13 = #8959a8
 
-# Purple
-color5  = #afdf00
-color13 = #afdf00
+# cyan
+color6  = #3e999f
+color14 = #3e999f
 
-# Teal
-color6  = #5fafdf
-color14 = #5fafdf
-
-# Extra colors
-color16 = #ff5faf
-color17 = #00af5f
-color18 = #262626
-color19 = #4d4d4c
-color20 = #949494
-color21 = #f3f3f3
-
+# white
+color7  = #4d4d4c
+color15 = #f5f5f5
 [hints]
 #font = Monospace 12
 #foreground = #dcdccc
