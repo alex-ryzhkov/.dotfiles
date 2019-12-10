@@ -93,9 +93,9 @@ nnoremap <leader>s :mksession<CR>
 " "+ for CLIPBOARD X11 selection
 " "* for PRIMARY X11 selection
 " Source: https://reddit.com/r/vim/comments/e65ghj/how_do_you_paste_from_vim_to_other_places_browser/f9nybs8/
-vnoremap <leader>y "*y
-nnoremap <leader>y "*y
-nnoremap <leader>p "*p
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
 " map NERDTree toggle key
 map <C-n> :NERDTreeToggle<CR>
