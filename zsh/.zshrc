@@ -104,5 +104,9 @@ source ~/.zsh_functions
 source ~/.zsh_aliases
 
 # Run tmux when a terminal is opened by default
-run_tmux
+# Don't do anything if it's not installed
+which tmux > /dev/null
+if [[ $? -eq 0 ]]; then
+    run_tmux
+fi
 # vim:foldmethod=marker:foldlevel=0
