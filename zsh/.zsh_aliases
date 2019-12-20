@@ -9,6 +9,10 @@ alias cdpkg='cd /var/cache/pacman/pkg'
 alias cdlg='cd /var/log'
 alias less='less -i'
 alias tls='tmux ls'
+alias ys='yandex-disk status'
+alias yp='yandex-disk publish'
+alias yu='yandex-disk unpublish'
+alias cdy='cd ~/sync/yandex-disk'
 # Internet
 alias yt='youtube-dl -f best -ciw -o "%(upload_date)s-%(title)s.%(ext)s" -v' # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
