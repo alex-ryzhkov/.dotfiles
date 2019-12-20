@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/zsh
 which stow > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
     echo 'stow is not found, aborting deployment'
