@@ -52,6 +52,10 @@ Plug 'jkramer/vim-checkbox'
 Plug 'easymotion/vim-easymotion'
 " surroundings
 Plug 'tpope/vim-surround'
+" Go
+Plug 'fatih/vim-go'
+" Tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -136,6 +140,10 @@ nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
+
+" Vim tmux navigator settings
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
 " }}}
 " Visual settings {{{
 
