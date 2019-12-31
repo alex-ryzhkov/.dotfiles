@@ -32,7 +32,8 @@ bindsym $mod+Shift+slash kill
 bindsym $mod+q kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Change focus
 bindsym $mod+h focus left
@@ -257,7 +258,7 @@ for_window [title="Open With"] floating enable
 exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 
 # Autostart
-exec --no-startup-id dropbox start
+# exec --no-startup-id dropbox start
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
 exec --no-startup-id "termite -t mocp -e mocp"
@@ -275,5 +276,7 @@ exec --no-startup-id "termite -t newsboat -e newsboat"
 exec --no-startup-id "termite -t ranger -e ranger"
 exec --no-startup-id firefox
 exec --no-startup-id dunst
+exec --no-startup-id yandex-disk start
+exec --no-startup-id antimicro
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
