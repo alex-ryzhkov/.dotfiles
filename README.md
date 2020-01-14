@@ -4,8 +4,7 @@ These are my dotfiles
 [`GNU Stow`](https://www.gnu.org/software/stow/)
 ## Installation
 ```bash
-cd ~
-git clone https://github.com/junkntrash/.dotfiles.git
+git clone https://github.com/alex-ryzhkov/.dotfiles.git
 cd .dotfiles
 ./deploy.sh
 ```
