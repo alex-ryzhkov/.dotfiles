@@ -102,16 +102,10 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 " map NERDTree toggle key
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle %<CR>
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
-
-" shortcutting split navigation, saving a keypress:
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
 
 " spell-check set to <leader>o, 'o' for 'orthography':
 map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
@@ -130,9 +124,17 @@ map <F4> :buffers<CR>
 " close current buffer
 map <F12> :bd!<CR>
 
+" Make pasting comfier
+set pastetoggle=<F10>
+
 " get a command under the cursor, execute it in shell
 " paste the result into the current file
 nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
+
+" Close the current buffer but keep a window
+" Src: https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
+map <leader>q :b#<bar>bd#<CR>
+map <leader>Q :bp<bar>sp<bar>bn<bar>bd<CR>
 " }}}
 " Plugins settings {{{
 
