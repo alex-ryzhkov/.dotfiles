@@ -1,17 +1,21 @@
 /* move statuspanel a little bit higher (in a very strange way) , media query is used
 to respect an old 4:3 display*/
+/* After Firefox 72.0 update statuspanel is not visible because it's rendered */
+/* behind all the stuff but I like my statuspanel so z-index makes sure it's */
+/* visible */
 @media screen and (max-height: 1024px) {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 64%!important}
+  .browserContainer > #statuspanel{z-index:1;-moz-box-ordinal-group:0!important;margin-top: 64%!important}
 }
 @media screen and (max-height: 768px) {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 40%!important}
+  .browserContainer > #statuspanel{z-index:1;-moz-box-ordinal-group:0!important;margin-top: 40%!important}
 }
 @media screen and (max-height: 1080px) {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  .browserContainer > #statuspanel{-moz-box-ordinal-group:0!important;margin-top: 32%!important}
+  .browserContainer > #statuspanel{z-index:1;-moz-box-ordinal-group:0!important;margin-top: 32%!important}
 }
+
 /* hide navigation buttons from the context menu */
 #context-navigation, #context-sep-navigation { display: none !important; }
 
