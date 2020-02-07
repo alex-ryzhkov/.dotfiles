@@ -232,7 +232,6 @@ bindsym $mod+Shift+m [title="mocp"] scratchpad show
 
 # Assign some programs their own workspaces
 assign [class="firefox"] 1
-assign [class="Anki"] 1
 assign [class="Zathura"] 1
 assign [title="ranger"] 2
 assign [title="newsboat"] 2
@@ -240,6 +239,7 @@ assign [class="Gens"] 3
 assign [class="QOwnNotes"] 3
 assign [class="Telegram"] 8
 assign [class="Thunderbird"] 8
+assign [class="discord"] 8
 assign [class="mpv"] 9
 
 # Turn toggable apps to scratchpad workspaces
@@ -248,7 +248,7 @@ for_window [title="mocp"] move scratchpad
 
 # We don't really need fullscreen for the following app(s)
 for_window [title="qBittorrent"] floating enable
-for_window [title="qBittorrent"] resize set 1900 800
+# for_window [title="qBittorrent"] resize set 1900 800
 
 # Make sure pop-up windows will float so they won't take the whole workspace
 for_window [window_role="pop-up"] floating enable
@@ -282,6 +282,6 @@ exec --no-startup-id "termite -t ranger -e ranger"
 exec --no-startup-id firefox
 exec --no-startup-id dunst
 exec --no-startup-id yandex-disk start
-exec --no-startup-id antimicroX
+exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""

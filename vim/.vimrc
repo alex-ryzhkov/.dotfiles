@@ -1,61 +1,27 @@
 " Plugin manager settings {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plug 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-" nerdtree plugin
 Plug 'scrooloose/nerdtree'
-" smart undo plugin
 Plug 'sjl/gundo.vim'
-" ctrlP
 Plug 'kien/ctrlp.vim'
-" visual stuff plugins
-" distraction free mode
-Plug 'junegunn/goyo.vim'
-"
-" papercolor theme
 Plug 'NLKNguyen/papercolor-theme'
-" airline status line and themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" python syntax highlight improved
 Plug 'hdima/python-syntax'
-" fzf plugin
-Plug 'junegunn/fzf'
-" codi plugin for REPL
+Plug 'junegunn/fzf.vim'
+Plug '/usr/bin/fzf'
 Plug 'metakirby5/codi.vim'
-" comments
 Plug 'tpope/vim-commentary'
-" todo list
 Plug 'jkramer/vim-checkbox'
-" easymotion
 Plug 'easymotion/vim-easymotion'
-" surroundings
 Plug 'tpope/vim-surround'
-" Go
 Plug 'fatih/vim-go'
-" Tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'wikitopian/hardmode'
+Plug 'junegunn/goyo.vim'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -102,7 +68,10 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 " map NERDTree toggle key
-map <C-n> :NERDTreeToggle %<CR>
+" map <C-n> :NERDTreeToggle %<CR>
+" Open nerd tree at the current file or close nerd tree if pressed again.
+" Src: https://github.com/nickjj/dotfiles/blob/master/.vimrc
+nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -133,8 +102,15 @@ nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
 
 " Close the current buffer but keep a window
 " Src: https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
-map <leader>q :b#<bar>bd#<CR>
+" map <leader>q :b#<bar>bd#<CR>
+nnoremap <leader>q :<c-u>enew<bar>bd #<cr>
 map <leader>Q :bp<bar>sp<bar>bn<bar>bd<CR>
+" Comfy search and replace
+nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
+" Comfy search via rg
+" Allow passing optional flags into the Rg command.
+"   Example: :Rg myterm -g '*.md'
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
 " }}}
 " Plugins settings {{{
 
@@ -146,6 +122,10 @@ let g:ctrlp_working_path_mode = 0
 " Vim tmux navigator settings
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
+
+" Nerdtree
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
 " }}}
 " Visual settings {{{
 
@@ -390,4 +370,6 @@ menu Encoding.ibm-866 :e ++enc=8bit-ibm866<CR>
 menu Encoding.utf-8 :e ++enc=2byte-utf-8 <CR>
 map <F9> :emenu Encoding.<TAB>
 " }}}
+" Suffering mode on
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 " vim:foldmethod=marker:foldlevel=0

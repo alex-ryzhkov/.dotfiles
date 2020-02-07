@@ -9,7 +9,7 @@ name = "awesome"
 [[block]]
 block = "custom"
 command = "echo YD"
-on_click = "~/.scripts/status_yd.sh"
+on_click = "~/.scripts/yandex_disk_status.sh"
 
 [[block]]
 block = "sound"

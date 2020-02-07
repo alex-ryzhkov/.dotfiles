@@ -1,3 +1,4 @@
+antimicro
 arch-wiki-docs
 audio-recorder
 avbin7
@@ -8,14 +9,19 @@ cli-visualizer-git
 dropbox
 i3status-rust
 id3
+joplin
 k2pdfopt
+lf-git
 libqdark-git
+mhwd-catalyst
+moc-pulse
 monolith
 perl-checkupdates-aur
 perl-www-aur
-qbittorrent-dark-git
-qownnotes
-qutebrowser-git
+python-pillow-simd
+python-sip-pyqt5
+python2-dukpy
+python2-pyglet
 shadowfox-updater
 skypeforlinux-stable-bin
 task-spooler
@@ -28,5 +34,8 @@ viber
 visual-studio-code-bin
 viu
 xcape-git
+xf86-input-keyboard
+xf86-input-mouse
 xkb-switch-git
 yadm-git
+yandex-disk

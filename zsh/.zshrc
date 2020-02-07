@@ -98,6 +98,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # }}}
+# Do not save a command in history if it's preceeded with space
+setopt HIST_IGNORE_SPACE
+
+# Enable a better reverse search experience.
+#   Requires: https://github.com/junegunn/fzf (to use fzf in general)
+#   Requires: https://github.com/BurntSushi/ripgrep (for using rg below)
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 
 # Source external files
 source ~/.zsh_functions
