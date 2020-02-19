@@ -22,6 +22,7 @@ Plug 'fatih/vim-go'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wikitopian/hardmode'
 Plug 'junegunn/goyo.vim'
+Plug 'vimwiki/vimwiki'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -372,4 +373,7 @@ map <F9> :emenu Encoding.<TAB>
 " }}}
 " Suffering mode on
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:vimwiki_list = [{'path': '~/work/notes/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " vim:foldmethod=marker:foldlevel=0
