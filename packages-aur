@@ -1,12 +1,13 @@
+aerc
 antimicro
 arch-wiki-docs
 audio-recorder
-avbin7
-brainworkshop
 checkupdates+aur
 checkupdates-aur
 cli-visualizer-git
 dropbox
+freeplane
+gksu-polkit
 i3status-rust
 id3
 joplin
@@ -37,5 +38,6 @@ xcape-git
 xf86-input-keyboard
 xf86-input-mouse
 xkb-switch-git
+xmind
 yadm-git
 yandex-disk

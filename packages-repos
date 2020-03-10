@@ -1,7 +1,6 @@
 accountsservice
 acpi
 acpid
-alacritty-terminfo
 alsa-firmware
 alsa-utils
 android-tools
@@ -10,7 +9,6 @@ anki
 arandr
 aspell-en
 atool
-audacious
 audacity
 autoconf
 automake
@@ -44,7 +42,6 @@ device-mapper
 dhclient
 dhcpcd
 diffutils
-discord
 dmenu
 dmidecode
 dmraid
@@ -78,6 +75,7 @@ firefox-i18n-en-us
 flameshot
 flatpak
 flex
+freemind
 freerdp
 freetype2
 fzf
@@ -92,7 +90,6 @@ ghostscript
 gimp
 gimp-help-en
 git
-gksu-polkit
 glances
 glibc
 gnome-icon-theme
@@ -143,6 +140,7 @@ ipython
 irssi
 jdk8-openjdk
 jfsutils
+jq
 jre8-openjdk
 jre8-openjdk-headless
 keepassxc
@@ -215,6 +213,7 @@ mlocate
 mobile-broadband-provider-info
 modemmanager
 mousepad
+mplayer
 mpv
 mtpfs
 mtr
@@ -227,6 +226,7 @@ neofetch
 neomutt
 neovim
 net-tools
+nethogs
 network-manager-applet
 networkmanager
 networkmanager-openconnect
@@ -362,6 +362,7 @@ virtualbox
 virtualbox-guest-iso
 vulkan-intel
 vulkan-radeon
+vym
 w3m
 wallpapers-2018
 weechat

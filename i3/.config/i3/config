@@ -233,6 +233,8 @@ bindsym $mod+Shift+m [title="mocp"] scratchpad show
 # Assign some programs their own workspaces
 assign [class="firefox"] 1
 assign [class="Zathura"] 1
+assign [class="okular"] 1
+assign [title=".*Okular.*"] 1
 assign [title="ranger"] 2
 assign [title="newsboat"] 2
 assign [class="Gens"] 3
@@ -248,6 +250,7 @@ for_window [title="mocp"] move scratchpad
 
 # We don't really need fullscreen for the following app(s)
 for_window [title="qBittorrent"] floating enable
+for_window [title="qBittorrent"] move position center
 # for_window [title="qBittorrent"] resize set 1900 800
 
 # Make sure pop-up windows will float so they won't take the whole workspace

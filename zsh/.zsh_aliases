@@ -14,6 +14,9 @@ alias ys='yandex-disk status'
 alias yp='yandex-disk publish'
 alias yu='yandex-disk unpublish'
 alias cdy='cd ~/sync/yandex-disk'
+alias diary="$EDITOR ~/sync/yandex-disk/2020.md"
+alias todo="$EDITOR ~/todo.md"
+alias journal='nvim -c 'startinsert' ~/sync/yandex-disk/journal/$(date "+%Y")/$(date "+%Y-%m-%d").md'
 # Internet
 alias yt='youtube-dl -f best -ciw -o "%(upload_date)s-%(title)s.%(ext)s" -v' # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
