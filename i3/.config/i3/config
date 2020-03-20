@@ -25,7 +25,7 @@ bindsym button4 nop
 bindsym button5 nop
 
 # Start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec konsole
 
 # Kill focused window
 bindsym $mod+Shift+slash kill
@@ -233,8 +233,12 @@ bindsym $mod+Shift+m [title="mocp"] scratchpad show
 # Assign some programs their own workspaces
 assign [class="firefox"] 1
 assign [class="Zathura"] 1
+# If we leave just 'for_window' instruction workspace indicator won't show hint
 assign [class="okular"] 1
-assign [title=".*Okular.*"] 1
+# assign [title=".*Okular.*"] 1
+# The following instruction is needed because okular doesn't move to workspace 1
+# automatically if it starts in fullscreen mode
+for_window [class="okular"] move workspace 1
 assign [title="ranger"] 2
 assign [title="newsboat"] 2
 assign [class="Gens"] 3

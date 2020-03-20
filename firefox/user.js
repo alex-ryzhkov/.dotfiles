@@ -20,7 +20,7 @@ user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket",
 user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.topSitesRows", 3);
+user_pref("browser.newtabpage.activity-stream.topSitesRows", 4);
 user_pref("browser.pagethumbnails.storage_version", 3);
 user_pref("browser.ping-centre.telemetry", false);
 user_pref("browser.rights.3.shown", true);
@@ -72,3 +72,4 @@ user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("browser.tabs.allowTabDetach", false);
