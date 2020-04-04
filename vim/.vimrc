@@ -72,7 +72,7 @@ nnoremap <leader>p "+p
 " map <C-n> :NERDTreeToggle %<CR>
 " Open nerd tree at the current file or close nerd tree if pressed again.
 " Src: https://github.com/nickjj/dotfiles/blob/master/.vimrc
-nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <silent> <expr> <C-n> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>

@@ -6,6 +6,7 @@ checkupdates+aur
 checkupdates-aur
 cli-visualizer-git
 dropbox
+fonttosfnt-git
 freeplane
 gksu-polkit
 i3status-rust
@@ -16,8 +17,10 @@ libqdark-git
 mhwd-catalyst
 moc-pulse
 monolith
+openbor
 perl-checkupdates-aur
 perl-www-aur
+pygtk
 python-pillow-simd
 python-sip-pyqt5
 python2-dukpy
@@ -38,5 +41,6 @@ xf86-input-keyboard
 xf86-input-mouse
 xkb-switch-git
 xmind
+xorg-fonts-misc-otb
 yadm-git
 yandex-disk

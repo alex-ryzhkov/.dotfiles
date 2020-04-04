@@ -171,8 +171,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux-firmware
 linux419
-linux54
-linux54-virtualbox-host-modules
 logrotate
 lostfiles
 lsb-release
