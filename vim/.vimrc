@@ -20,9 +20,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'wikitopian/hardmode'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'RyanMillerC/better-vim-tmux-resizer'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -112,6 +112,14 @@ nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 " Allow passing optional flags into the Rg command.
 "   Example: :Rg myterm -g '*.md'
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
+
+" resize panes in tmux
+let g:tmux_resizer_no_mappings = 1
+
+nnoremap <silent> <Left> :TmuxResizeLeft<CR>
+nnoremap <silent> <Down> :TmuxResizeDown<CR>
+nnoremap <silent> <Up> :TmuxResizeUp<CR>
+nnoremap <silent> <Right> :TmuxResizeRight<CR>
 " }}}
 " Plugins settings {{{
 
@@ -371,8 +379,6 @@ menu Encoding.ibm-866 :e ++enc=8bit-ibm866<CR>
 menu Encoding.utf-8 :e ++enc=2byte-utf-8 <CR>
 map <F9> :emenu Encoding.<TAB>
 " }}}
-" Suffering mode on
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 let g:vimwiki_list = [{'path': '~/work/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
