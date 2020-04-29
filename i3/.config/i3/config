@@ -204,8 +204,8 @@ bindsym $mod+Shift+q mode "$mode_system"
 
 bar {
         # Disable switching workspaces with mouse wheel
-        wheel_up_cmd nop
-        wheel_down_cmd nop
+        bindsym button4 nop
+        bindsym button5 nop
 
         # Install ttf-font-awesome-4 from AUR for icons
         font pango:Terminus, FontAwesome 16
@@ -273,7 +273,7 @@ exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 # exec --no-startup-id dropbox start
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
-exec --no-startup-id "termite -t mocp -e mocp"
+exec --no-startup-id "konsole -e mocp"
 exec --no-startup-id conky -p 40
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
@@ -283,9 +283,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id "~/.config/i3/load_layout.sh "
 exec --no-startup-id telegram-desktop
 # Make discord wait until the network is available
-exec --no-startup-id "sleep 5 && discord"
-exec --no-startup-id "termite -t newsboat -e newsboat"
-exec --no-startup-id "termite -t ranger -e ranger"
+exec --no-startup-id "konsole -e ranger"
 exec --no-startup-id firefox
 exec --no-startup-id dunst
 exec --no-startup-id yandex-disk start

@@ -6,7 +6,8 @@
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font = Monospace 16
+# font = Monospace 16
+font = Terminus 14
 # font = Noto Sans Mono 16
 #fullscreen = true
 #icon_name = terminal

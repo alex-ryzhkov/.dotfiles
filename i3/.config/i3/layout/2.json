@@ -17,11 +17,11 @@
                "x": 0,
                "y": 0
             },
-            "name": "newsboat",
+            "name": "Spotify Free",
             "percent": 1,
             "swallows": [
                {
-                "title": "^newsboat$"
+                "title": "^Spotify Free$"
                }
             ],
             "type": "con"

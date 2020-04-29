@@ -42,6 +42,7 @@ device-mapper
 dhclient
 dhcpcd
 diffutils
+discord
 dmenu
 dmidecode
 dmraid
@@ -62,6 +63,8 @@ expect
 f2fs-tools
 fakeroot
 fasd
+fceux
+fd
 fdupes
 feh
 ffmpeg
@@ -131,6 +134,7 @@ i3status
 inetutils
 intel-ucode
 inxi
+iotop
 iproute2
 iptables
 iputils
@@ -237,6 +241,7 @@ nfs-utils
 nmap
 nnn
 nodejs
+noto-fonts-emoji
 nss-mdns
 ntfs-3g
 ntp
@@ -303,9 +308,11 @@ screenfetch
 scrot
 sed
 shadow
+shellcheck
 smartmontools
 spectre-meltdown-checker
 splix
+sshfs
 stow
 strace
 subversion
@@ -345,6 +352,7 @@ ttf-ibm-plex
 ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
+ttf-material-icons
 tumbler
 udiskie
 udisks2
