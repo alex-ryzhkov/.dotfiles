@@ -1,14 +1,17 @@
 accountsservice
 acpi
 acpid
+alacritty
 alsa-firmware
 alsa-utils
 android-tools
 android-udev
 anki
+apache
 arandr
 aspell-en
 atool
+atop
 audacity
 autoconf
 automake
@@ -16,7 +19,7 @@ avahi
 b43-fwcutter
 bash
 bat
-bind-tools
+bind
 binutils
 bison
 blueman
@@ -47,12 +50,14 @@ dmenu
 dmidecode
 dmraid
 dnsmasq
+dolphin-emu
 dosfstools
 dunst
 e2fsprogs
 ecryptfs-utils
 ed
 efibootmgr
+element-desktop
 emacs
 engrampa
 etckeeper
@@ -72,6 +77,7 @@ ffmpegthumbnailer
 file
 file-roller
 filesystem
+filezilla
 findutils
 firefox
 firefox-i18n-en-us
@@ -113,6 +119,7 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gtk3
+guake
 gufw
 gvfs
 gvfs-afc
@@ -131,7 +138,9 @@ i3-gaps
 i3blocks
 i3lock
 i3status
+i3status-rust
 inetutils
+intel-gpu-tools
 intel-ucode
 inxi
 iotop
@@ -148,6 +157,7 @@ jq
 jre8-openjdk
 jre8-openjdk-headless
 keepassxc
+keychain
 konsole
 less
 lib32-flex
@@ -177,6 +187,7 @@ linux-firmware
 linux419
 logrotate
 lostfiles
+lrzsz
 lsb-release
 lsof
 ltrace
@@ -201,7 +212,9 @@ manjaro-settings-manager-notifier
 manjaro-system
 manjaro-wallpapers-18.0
 manjaro-xfce-settings
+mariadb
 matcha-gtk-theme
+mc
 mdadm
 meld
 memtest86+
@@ -210,7 +223,7 @@ mesa-demos
 mesa-vdpau
 mhwd
 mhwd-db
-microsoft-office-online-jak
+microsoft-office-web-jak
 mkinitcpio-openswap
 mlocate
 mobile-broadband-provider-info
@@ -253,11 +266,11 @@ openresolv
 openssh
 orage
 os-prober
-otf-fira-code
 p7zip
 pacman
 pacutils
 pamac-gtk
+pandoc
 pass
 patch
 patchutils
@@ -266,6 +279,7 @@ pciutils
 perl
 perl-anyevent-i3
 perl-file-mimeinfo
+php-fpm
 picom
 pidgin
 pkgconf
@@ -280,6 +294,7 @@ pulseaudio-bluetooth
 pulseaudio-ctl
 pulseaudio-zeroconf
 pv
+pwgen
 python-pip
 python-pyqt5
 python-pywal
@@ -304,6 +319,7 @@ rsync
 rxvt-unicode
 s-nail
 samba
+screen
 screenfetch
 scrot
 sed
@@ -313,6 +329,7 @@ smartmontools
 spectre-meltdown-checker
 splix
 sshfs
+steam-manjaro
 stow
 strace
 subversion
@@ -333,6 +350,7 @@ terminus-font-otb
 termite
 tex-gyre-fonts
 texinfo
+texlive-core
 the_silver_searcher
 thunar-archive-plugin
 thunar-gtk3
@@ -352,7 +370,6 @@ ttf-ibm-plex
 ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
-ttf-material-icons
 tumbler
 udiskie
 udisks2
@@ -381,11 +398,9 @@ wine-gecko
 wine-mono
 wireshark-qt
 wmctrl
-workrave
 wpa_supplicant
 xcursor-simpleandsoft
 xcursor-vanilla-dmz-aa
-xdg-su
 xdg-user-dirs
 xdg-utils
 xdotool
@@ -444,6 +459,9 @@ xsel
 xterm
 yay
 yelp
+zabbix-agent
+zabbix-frontend-php
+zabbix-server
 zathura
 zathura-cb
 zathura-djvu

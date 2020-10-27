@@ -27,7 +27,7 @@ user_pref("browser.rights.3.shown", true);
 user_pref("browser.shell.checkDefaultBrowser", true);
 user_pref("browser.startup.homepage", "https://getpocket.com/a/queue/");
 user_pref("browser.startup.page", 3);
-user_pref("browser.tabs.closeWindowWithLastTab", false);
+user_pref("browser.tabs.closeWindowWithLastTab", true);
 user_pref("browser.tabs.drawInTitlebar", false);
 user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:Infinity");

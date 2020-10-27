@@ -138,16 +138,25 @@ exec_command10        = F10
 # go_to_fast_dir9 = (
 # go_to_fast_dir10 = )
 
-volume_10 =  M-1
-volume_20 =  M-2
-volume_30 =  M-3
-volume_40 =  M-4
-volume_50 =  M-5
-volume_60 =  M-6
-volume_70 =  M-7
-volume_80 =  M-8
-volume_90 =  M-9
+# volume_10 =  M-1
+# volume_20 =  M-2
+# volume_30 =  M-3
+# volume_40 =  M-4
+# volume_50 =  M-5
+# volume_60 =  M-6
+# volume_70 =  M-7
+# volume_80 =  M-8
+# volume_90 =  M-9
 
+volume_10 = 1
+volume_20 = 2
+volume_30 = 3
+volume_40 = 4
+volume_50 = 5
+volume_60 = 6
+volume_70 = 7
+volume_80 = 8
+volume_90 = 9
 # The following commands are available but not assigned to any keys by
 # default:
 #

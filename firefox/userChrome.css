@@ -25,22 +25,21 @@ to respect an old 4:3 display*/
 #toolbar-menubar menu {
   font-size: 20px !important;
 }
-
 /* Tab bar */
 #TabsToolbar {
-  font-size: 20px !important;
+  font-size: 12px !important;
 }
 
 /* Main Toolbar */
 #nav-bar {
-  font-size: 20px !important;
+  font-size: 12px !important;
 }
 
 /* Bookmarks Toolbar */
 #PersonalToolbar,
 #PersonalToolbar menuitem,
 #PersonalToolbar menu {
-  font-size: 20px !important;
+  font-size: 12px !important;
 }
 
 /* Context menus (this is not all of them) */
@@ -49,7 +48,7 @@ menupopup[id*="ContextMenu"] menu,
 #placesContext menuitem,
 #placesContext menu,
 #backForwardMenu menuitem {
-  font-size: 20px !important;
+  font-size: 12px !important;
 }
 
 /* Increase font size of tab's tooltip */
@@ -61,5 +60,25 @@ menupopup[id*="ContextMenu"] menu,
 #urlTooltip,
 tooltip
 {
-  font-size: 18px !important;
+  font-size: 12px !important;
 }
+/* #TabsToolbar { visibility: collapse !important; } */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+* {
+font-size: 12pt !important
+}
+/* dim not selected tabs */
+.tabbrowser-tab:not([selected]) .tab-content{
+    color: #808080 !important;
+}
+/* .tabbrowser-tab[selected="true"] .tab-content{ */
+/*     border-top: 3px solid #924441 !important; */
+/* } */
+
+/* now unloaded tabs have a grey border on the top */
+.tabbrowser-tab[pending] {
+   border-top: 3px solid grey !important;
+}
+

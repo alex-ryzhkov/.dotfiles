@@ -64,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git sudo extract vi-mode fzf
+  git sudo extract fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,7 +104,9 @@ setopt HIST_IGNORE_SPACE
 # Enable a better reverse search experience.
 #   Requires: https://github.com/junegunn/fzf (to use fzf in general)
 #   Requires: https://github.com/BurntSushi/ripgrep (for using rg below)
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+if [ -x "$(command -v fzf)" ]; then
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+fi
 
 # Source external files
 source ~/.zsh_functions
@@ -112,8 +114,11 @@ source ~/.zsh_aliases
 
 # Run tmux when a terminal is opened by default
 # Don't do anything if it's not installed
-which tmux > /dev/null
-if [[ $? -eq 0 ]]; then
-    run_tmux
+# which tmux > /dev/null
+# if [[ $? -eq 0 ]]; then
+#     # run_tmux
+# fi
+if [ -x "$(command -v keychain)" ]; then
+    eval `keychain --eval --quiet id_rsa`
 fi
 # vim:foldmethod=marker:foldlevel=0

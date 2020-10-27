@@ -8,10 +8,14 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export EDITOR=vim
 export VISUAL=$EDITOR
-export MYTERM=termite
+export MYTERM=konsole
 export DOTFILES=~/.dotfiles
 # Make systemctl output colorful
 export SYSTEMD_COLORS=true
+export MOZ_X11_EGL=1
+if [ -x "$(command -v keychain)" ]; then
+    eval `keychain --eval --quiet id_rsa`
+fi
 # Set $PATH {{{
 # http://askubuntu.com/questions/49784/how-is-bin-added-to-my-path
 # Locally installed package
@@ -27,15 +31,16 @@ if [ -d "$GOPATH" ] ; then
 fi
 
 # User Scripts
-# if [ -d "$HOME/.scripts" ] ; then
-#     export PATH="$HOME/.scripts:$PATH"
-# fi
-#}}}
+if [ -d "$HOME/.scripts" ] ; then
+    export PATH="$HOME/.scripts:$PATH"
+fi
+
 
 # Swap escape and capslock
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
 # Start X automatically
 # if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 #     startx
 # fi
 # vim:foldmethod=marker:foldlevel=0
+

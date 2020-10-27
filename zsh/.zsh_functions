@@ -1,14 +1,22 @@
 # Prevent ranger nested instances
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
+# ranger() {
+#     if [ -z "$RANGER_LEVEL" ]; then
+#         /usr/bin/ranger "$@"
+#     else
+#         exit
+#     fi
+# }
 
 .df() {
     file_to_edit="$(find $DOTFILES -type f -not -path '*/\.git/*' | fzf)"
+    result=$?
+    if [ $result -eq 0 ]; then
+        $EDITOR $file_to_edit
+    fi
+}
+
+.sc() {
+    file_to_edit="$(find ~/.scripts -type f -not -path '*/\.git/*' | fzf)"
     result=$?
     if [ $result -eq 0 ]; then
         $EDITOR $file_to_edit
@@ -84,4 +92,44 @@ ta() {
     else
         echo ".zsh_functions ta(): Too many arguments"
     fi
+}
+# ssh() {
+#     tmux rename-window "$(echo $* | cut -d . -f 1)"
+#     command ssh "$@"
+#     tmux set-window-option automatic-rename "on" 1>/dev/null
+# }
+# if [ "z" != "z$TMUX" ]
+# then
+#     function ssh_tmux
+#     {
+#         tmux rename-window $1
+#         ssh -q "$@"
+#         tmux rename-window `hostname`
+#     }
+# alias ssh='ssh_tmux'
+# else
+#     alias ssh='ssh -q'
+# fi
+
+# ss() {
+#     HOST=`cat ~/.ssh/config | grep -i 'host '| awk '{print $2}' | fzf`
+#     # ssh `cat ~/.ssh/config | awk -v host="$HOST" 'BEGIN{RS="\n\n"}$2 ~ host {print $6 "@" $4 " -p " $8}'`
+#     ssh `cat ~/.ssh/config | awk -v host="^$HOST" 'BEGIN{RS="\n\n"}$2 ~ host {printf "-i ";printf (NF==10)? $10 " " : "~/.ssh/id_rsa ";print $6 "@" $4 " -p " $8}'`
+# }
+ss() {
+    #enable passing options
+    while getopts ":v" opt; do
+        case ${opt} in
+            v) #verbose
+                ssh -vvv -A `grep -i 'host ' ~/.ssh/config | awk '{print $2}' | fzf`
+            ;;
+        esac
+    done
+    if [ $OPTIND -eq 1 ]; then
+        ssh -A `grep -i 'host ' ~/.ssh/config | awk '{print $2}' | fzf` 2>/dev/null
+    fi
+}
+
+sf() {
+    sftp `grep -i 'host ' ~/.ssh/config | awk '{print $2}' | fzf` 2>/dev/null
 }

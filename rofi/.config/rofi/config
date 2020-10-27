@@ -1,4 +1,3 @@
-rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
 rofi.terminal:                       xfce4-terminal
 rofi.kb-row-up:                      Up,Control+k,Control+p
 rofi.kb-row-down:                    Down,Control+j,Control+n
@@ -8,3 +7,5 @@ rofi.kb-mode-next:                   Control+l,Shift+Right
 rofi.kb-mode-previous:               Control+h,Shift+Left
 rofi.kb-remove-char-back: BackSpace
 rofi.width: 25
+rofi.font: Terminus 12
+rofi.theme: /usr/share/rofi/themes/dmenu.rasi

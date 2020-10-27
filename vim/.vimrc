@@ -67,6 +67,8 @@ nnoremap <leader>s :mksession<CR>
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
+vnoremap <leader>d "+d
+nnoremap <leader>d "+d
 
 " map NERDTree toggle key
 " map <C-n> :NERDTreeToggle %<CR>
