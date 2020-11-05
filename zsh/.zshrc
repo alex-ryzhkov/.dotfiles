@@ -121,4 +121,5 @@ source ~/.zsh_aliases
 if [ -x "$(command -v keychain)" ]; then
     eval `keychain --eval --quiet id_rsa`
 fi
+
 # vim:foldmethod=marker:foldlevel=0

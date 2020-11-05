@@ -29,11 +29,16 @@ microsoft-edge-dev-bin
 moc-pulse
 monolith
 mpz
+notepadqq-git
 openbor
 otf-fira-code
 perl-checkupdates-aur
 perl-www-aur
+python-flask-socketio2
+python-flask12
+python-gdbgui
 python-pillow-simd
+python-pygdbmi
 python-sip-pyqt5
 python2-dukpy
 python2-future
@@ -41,6 +46,7 @@ python2-pyglet
 python2-pytoml
 qdirstat
 qzdl
+renoise3-demo
 shadowfox-updater
 skypeforlinux-stable-bin
 spotify

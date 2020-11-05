@@ -180,8 +180,8 @@ bindsym XF86AudioNext exec --no-startup-id "mocp -f"
 bindsym --release $mod+Shift+x exec --no-startup-id xkill
 
 # Make a screenshot
-bindsym Print exec --no-startup-id scrot
-bindsym Shift+Print exec --no-startup-id flameshot gui
+# bindsym Print exec --no-startup-id scrot
+bindsym Print exec --no-startup-id flameshot gui
 
 # Create a log out menu
 #set $Locker i3lock -i /tmp/blur_screenshot.png --show-failed-attempts && sleep 1
@@ -230,6 +230,7 @@ bindsym $mod+y exec --no-startup-id ~/.scripts/yt_script.sh
 bindsym $mod+Shift+n [class="GoldenDict"] scratchpad show
 # bindsym $mod+Shift+m [title="mocp"] scratchpad show
 bindsym $mod+Shift+p [title="^support$"] scratchpad show
+bindsym $mod+Shift+o [title=".*gedit$"] scratchpad show
 
 # Assign some programs their own workspaces
 assign [class="firefox"] 1
@@ -252,6 +253,7 @@ assign [class="mpv"] 9
 
 # Turn toggable apps to scratchpad workspaces
 for_window [class="GoldenDict"] move scratchpad
+for_window [title=".*gedit$"] move scratchpad
 # for_window [title="mocp"] move scratchpad
 for_window [title="^support$"] move scratchpad
 
