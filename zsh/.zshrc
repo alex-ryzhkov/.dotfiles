@@ -122,4 +122,8 @@ if [ -x "$(command -v keychain)" ]; then
     eval `keychain --eval --quiet id_rsa`
 fi
 
+if [ "z" != "z$TMUX" ]; then
+    tmux rename-window $(hostname)
+fi
+
 # vim:foldmethod=marker:foldlevel=0
