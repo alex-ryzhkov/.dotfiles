@@ -40,22 +40,15 @@ filetype plugin indent on    " required
 " }}}
 " Key mappings {{{
 
-" insert new line under and over
-" nmap oo o<Esc>k
-" nmap OO O<Esc>j
-
-" move vertically by visual line
-" nnoremap j gj
-" nnoremap k gk
-
 " change the mapleader from \ to ,
 let mapleader=','
 
-" turn off search highlight
-" nnoremap <leader><space> :nohlsearch<CR>
+" Run python code
+autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-" space open/closes folds
-" nnoremap <space> za
+" spell-check set to <leader>o, 'o' for 'orthography':
+map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
 
 " save session
 " nnoremap <leader>s :mksession<CR>
@@ -79,29 +72,6 @@ nnoremap <silent> <expr> <C-n> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : buf
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" spell-check set to <leader>o, 'o' for 'orthography':
-map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
-
-" make it possible to move while in insert mode
-" inoremap <C-k> <Up>
-" inoremap <C-j> <Down>
-" inoremap <C-h> <Left>
-" inoremap <C-l> <Right>
-
-" buttons for going to previous/next file (buffer)
-" map <F2> :bprevious<CR>
-" map <F3> :bnext<CR>
-" show a list of files (buffers) that are open
-" map <F4> :buffers<CR>
-" close current buffer
-" map <F12> :bd!<CR>
-
-" Make pasting comfier
-set pastetoggle=<F10>
-
-" get a command under the cursor, execute it in shell
-" paste the result into the current file
-" nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
 
 " Close the current buffer but keep a window
 " Src: https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
@@ -110,10 +80,6 @@ nnoremap <leader>q :<c-u>enew<bar>bd #<cr>
 map <leader>Q :bp<bar>sp<bar>bn<bar>bd<CR>
 " Comfy search and replace
 nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
-" Comfy search via rg
-" Allow passing optional flags into the Rg command.
-"   Example: :Rg myterm -g '*.md'
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
 
 " resize panes in tmux
 let g:tmux_resizer_no_mappings = 1
@@ -384,6 +350,4 @@ map <F9> :emenu Encoding.<TAB>
 let g:vimwiki_list = [{'path': '~/work/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
-autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " vim:foldmethod=marker:foldlevel=0

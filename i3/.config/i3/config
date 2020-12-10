@@ -33,14 +33,14 @@ bindsym $mod+Return exec uxterm
 
 # Kill focused window
 # bindsym $mod+Shift+slash kill
-bindsym $mod+Shift+slash exec --no-startup-id /home/yoba/close.sh
-bindsym $mod+Shift+c exec --no-startup-id /home/yoba/close.sh
-bindsym $mod+x exec --no-startup-id /home/yoba/close.sh
+bindsym $mod+Shift+slash exec --no-startup-id /home/yoba/.scripts/close.sh
+bindsym $mod+Shift+c exec --no-startup-id /home/yoba/.scripts/close.sh
+bindsym $mod+x exec --no-startup-id /home/yoba/.scripts/close.sh
 
 # Start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id /home/yoba/rofi.sh
-bindsym $mod+Shift+i exec --no-startup-id /home/yoba/snippy.sh
+bindsym $mod+d exec --no-startup-id /home/yoba/.scripts/rofi.sh
+bindsym $mod+Shift+i exec --no-startup-id /home/yoba/.scripts/snippy.sh
 
 # Change focus
 bindsym $mod+h focus left
@@ -298,7 +298,6 @@ exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 # exec --no-startup-id dropbox start
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
-#exec --no-startup-id termite -t support -e /home/yoba/support.sh
 exec --no-startup-id conky -p 40
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
@@ -308,7 +307,7 @@ exec --no-startup-id picom -b
 # exec --no-startup-id "~/.config/i3/load_layout.sh "
 exec --no-startup-id telegram-desktop
 # exec --no-startup-id element-desktop
-exec --no-startup-id "konsole -e ranger"
+exec --no-startup-id cool-retro-term -T "cool-retro-term"
 exec --no-startup-id firefox
 exec --no-startup-id gedit
 # exec --no-startup-id guake
