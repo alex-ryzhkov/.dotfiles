@@ -23,6 +23,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.gem/ruby" ] ; then
+    PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+fi
+
 # Go Packages
 export GOPATH=$HOME/work/go
 if [ -d "$GOPATH" ] ; then

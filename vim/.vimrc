@@ -41,24 +41,24 @@ filetype plugin indent on    " required
 " Key mappings {{{
 
 " insert new line under and over
-nmap oo o<Esc>k
-nmap OO O<Esc>j
+" nmap oo o<Esc>k
+" nmap OO O<Esc>j
 
 " move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " change the mapleader from \ to ,
 let mapleader=','
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
+" nnoremap <leader><space> :nohlsearch<CR>
 
 " space open/closes folds
-nnoremap <space> za
+" nnoremap <space> za
 
 " save session
-nnoremap <leader>s :mksession<CR>
+" nnoremap <leader>s :mksession<CR>
 
 " copy paste
 " "+ for CLIPBOARD X11 selection
@@ -83,25 +83,25 @@ nnoremap <leader>u :GundoToggle<CR>
 map <leader>o :setlocal spell! spelllang=ru_ru,en_us<CR>
 
 " make it possible to move while in insert mode
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+" inoremap <C-k> <Up>
+" inoremap <C-j> <Down>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 " buttons for going to previous/next file (buffer)
-map <F2> :bprevious<CR>
-map <F3> :bnext<CR>
+" map <F2> :bprevious<CR>
+" map <F3> :bnext<CR>
 " show a list of files (buffers) that are open
-map <F4> :buffers<CR>
+" map <F4> :buffers<CR>
 " close current buffer
-map <F12> :bd!<CR>
+" map <F12> :bd!<CR>
 
 " Make pasting comfier
 set pastetoggle=<F10>
 
 " get a command under the cursor, execute it in shell
 " paste the result into the current file
-nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
+" nnoremap <leader>ec ^yg_:r!<C-r>"<CR>
 
 " Close the current buffer but keep a window
 " Src: https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
@@ -384,4 +384,6 @@ map <F9> :emenu Encoding.<TAB>
 let g:vimwiki_list = [{'path': '~/work/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " vim:foldmethod=marker:foldlevel=0

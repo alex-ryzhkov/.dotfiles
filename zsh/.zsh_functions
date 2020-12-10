@@ -132,3 +132,11 @@ if [ "z" != "z$TMUX" ]; then
 else
   alias ssh='ssh -q'
 fi
+
+html2pdf() {
+    if [[ $# -eq 0 ]]; then
+        echo "usage: html2pdf <url> <filename>"
+    else
+        chromium --headless --disable-gpu --print-to-pdf="${2}".pdf "${1}"
+    fi
+}

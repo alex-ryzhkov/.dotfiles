@@ -15,7 +15,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Terminus 12
+font pango:Terminus 10
 # font -Misc-Fixed-Medium-R-Normal--15-140-75-75-C-90-ISO10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -24,14 +24,18 @@ floating_modifier $mod
 bindsym button4 nop
 bindsym button5 nop
 
+# Disabe selection by clicking on window title
+bindsym button1 nop
+
 # Start a terminal
-bindsym $mod+Return exec konsole
-bindsym F12 exec guake
+# bindsym $mod+Return exec /home/yoba/crt.sh
+bindsym $mod+Return exec uxterm
 
 # Kill focused window
 # bindsym $mod+Shift+slash kill
 bindsym $mod+Shift+slash exec --no-startup-id /home/yoba/close.sh
 bindsym $mod+Shift+c exec --no-startup-id /home/yoba/close.sh
+bindsym $mod+x exec --no-startup-id /home/yoba/close.sh
 
 # Start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -71,6 +75,8 @@ bindsym $mod+Shift+backslash split horizontal
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# Sticky float
+bindsym $mod+Shift+t sticky toggle
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -80,7 +86,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 
 # Change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+comma focus mode_toggle
 
 # Focus the parent container
 bindsym $mod+a focus parent
@@ -169,12 +175,21 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "sudo ~/brightness +"
 # Control volume
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
+bindsym Ctrl+Down exec --no-startup-id "amixer set Master 5%-"
+bindsym Ctrl+Up exec --no-startup-id "amixer set Master 5%+"
+bindsym F10 exec --no-startup-id "amixer set Master 5%-"
+bindsym F11 exec --no-startup-id "amixer set Master 5%+"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 1 toggle"
+bindsym $mod+m  exec --no-startup-id "pactl set-sink-mute 1 toggle"
 
 # Media keys
-bindsym XF86AudioPlay exec --no-startup-id "mocp -G"
-bindsym XF86AudioPrev exec --no-startup-id "mocp -r"
-bindsym XF86AudioNext exec --no-startup-id "mocp -f"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctl next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl prev"
+#bindsym F7 exec --no-startup-id "mocp -G"
+bindsym F6 exec --no-startup-id "playerctl --player=mpv,spotify previous"
+bindsym F7 exec --no-startup-id "playerctl --player=mpv,spotify play-pause"
+bindsym F8 exec --no-startup-id "playerctl --player=mpv,spotify next"
 
 # Kill apps in a comfy way
 bindsym --release $mod+Shift+x exec --no-startup-id xkill
@@ -208,7 +223,7 @@ bar {
         bindsym button5 nop
 
         # Install ttf-font-awesome-4 from AUR for icons
-        font pango:Terminus, FontAwesome 14
+        font pango:Terminus, FontAwesome 10
         position bottom
         status_command i3status-rs ~/.config/i3/status.toml
 
@@ -227,21 +242,25 @@ bar {
 bindsym $mod+y exec --no-startup-id ~/.scripts/yt_script.sh
 
 # Make the following  apps act as toggable scratchpad windows
+# bindsym F1 exec wmctrl -a firefox
+bindsym F1 [class="cool-retro-term"] scratchpad show
+bindsym F2 [title=".*gedit$"] scratchpad show
+bindsym F3 [class="GoldenDict"] scratchpad show
+bindsym F4 [class="Spotify"] scratchpad show
+# bindsym F8 exec wmctrl -xa element
+
 bindsym $mod+Shift+n [class="GoldenDict"] scratchpad show
-# bindsym $mod+Shift+m [title="mocp"] scratchpad show
-bindsym $mod+Shift+p [title="^support$"] scratchpad show
-bindsym $mod+Shift+o [title=".*gedit$"] scratchpad show
+bindsym $mod+Shift+p exec --no-startup-id passmenu
 
 # Assign some programs their own workspaces
 assign [class="firefox"] 1
 assign [class="Zathura"] 1
 # If we leave just 'for_window' instruction workspace indicator won't show hint
 assign [class="okular"] 1
-# assign [title=".*Okular.*"] 1
 # The following instruction is needed because okular doesn't move to workspace 1
 # automatically if it starts in fullscreen mode
 for_window [class="okular"] move workspace 1
-# assign [title="ranger"] 2
+for_window [class="ranger"] move workspace 2
 assign [title="newsboat"] 2
 assign [class="Gens"] 3
 assign [class="QOwnNotes"] 3
@@ -256,11 +275,9 @@ for_window [class="GoldenDict"] move scratchpad
 for_window [title=".*gedit$"] move scratchpad
 # for_window [title="mocp"] move scratchpad
 for_window [title="^support$"] move scratchpad
-
-# We don't really need fullscreen for the following app(s)
-# for_window [title="qBittorrent"] floating enable
-for_window [title="qBittorrent"] move position center
-# for_window [title="qBittorrent"] resize set 1900 800
+# for_window [class="cool-retro-term"] move scratchpad, resize set 1600 900, move absolute position center
+for_window [class="cool-retro-term"] move scratchpad, resize set 2560 1080, move absolute position center
+for_window [class="Spotify"] move scratchpad, resize set 2560 1080, move absolute position center
 
 #I'm not sure why it works but it lets guake to behave the way I want it
 #i.e as a regular terminal without fullscreen
@@ -281,7 +298,7 @@ exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 # exec --no-startup-id dropbox start
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
-exec --no-startup-id termite -t support -e /home/yoba/support.sh
+#exec --no-startup-id termite -t support -e /home/yoba/support.sh
 exec --no-startup-id conky -p 40
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
@@ -290,12 +307,18 @@ exec --no-startup-id xset s off
 exec --no-startup-id picom -b
 # exec --no-startup-id "~/.config/i3/load_layout.sh "
 exec --no-startup-id telegram-desktop
-exec --no-startup-id element-desktop
+# exec --no-startup-id element-desktop
 exec --no-startup-id "konsole -e ranger"
 exec --no-startup-id firefox
-exec --no-startup-id guake
+exec --no-startup-id gedit
+# exec --no-startup-id guake
 exec --no-startup-id dunst
 exec --no-startup-id yandex-disk start
 exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
+exec_always --no-startup-id /home/yoba/auto_scratchpad.py True,,,gedit,,
+# exec_always --no-startup-id /home/yoba/auto_scratchpad.py True,,,cool-retro-term,,
+exec_always --no-startup-id /home/yoba/auto_scratchpad.py True,,,goldendict,,
+exec_always --no-startup-id /home/yoba/auto_scratchpad.py True,,,termite,,
+exec_always --no-startup-id /home/yoba/auto_scratchpad.py True,,,spotify,,

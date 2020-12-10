@@ -3,12 +3,12 @@ set statusbar-v-padding 0
 set page-padding 1
 set scroll-step 160
 #enable system-wide clipboard
-set selection-clipboard clipboard
+#set selection-clipboard clipboard
 #contract HOME to '~'
 set window-title-home-tilde true
 set statusbar-home-tilde true
 #font size in statusbar and contents
-set font "Terminus 14"
+set font "Terminus 10"
 #disable statusbar by default
 set guioptions none
 
