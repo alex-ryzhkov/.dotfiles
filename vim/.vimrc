@@ -350,4 +350,11 @@ map <F9> :emenu Encoding.<TAB>
 let g:vimwiki_list = [{'path': '~/work/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+set clipboard^=unnamed,unnamedplus
+set guifont=Terminus\ Medium\ 10
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
 " vim:foldmethod=marker:foldlevel=0
