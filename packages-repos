@@ -125,6 +125,7 @@ gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
+gtk-chtheme
 gtk3
 guake
 gufw
@@ -188,6 +189,7 @@ libva-intel-driver
 libva-mesa-driver
 libva-utils
 libva-vdpau-driver
+libvirt
 libvncserver
 licenses
 light-locker
@@ -273,12 +275,12 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
+obs-studio
 okular
 open-vm-tools
 openbsd-netcat
 openresolv
 openssh
-orage
 os-prober
 p7zip
 pacman
@@ -311,6 +313,7 @@ pulseaudio-ctl
 pulseaudio-zeroconf
 pv
 pwgen
+python-i3ipc
 python-pip
 python-pyqt5
 python-pywal
@@ -330,6 +333,7 @@ redshift
 reiserfsprogs
 remmina
 ripgrep
+rlwrap
 rofi
 rsync
 rxvt-unicode
@@ -364,7 +368,6 @@ tar
 tcpdump
 telegram-desktop
 terminus-font
-terminus-font-otb
 termite
 tex-gyre-fonts
 texinfo
@@ -402,6 +405,7 @@ vi
 viewnior
 virtualbox
 virtualbox-guest-iso
+viu
 vulkan-intel
 vulkan-radeon
 vym

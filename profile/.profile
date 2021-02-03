@@ -8,7 +8,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export EDITOR=vim
 export VISUAL=$EDITOR
-export MYTERM=konsole
+export MYTERM=alacritty
 export DOTFILES=~/.dotfiles
 # Make systemctl output colorful
 export SYSTEMD_COLORS=true
@@ -39,12 +39,23 @@ if [ -d "$HOME/.scripts" ] ; then
     export PATH="$HOME/.scripts:$PATH"
 fi
 
-
 # Swap escape and capslock
 # setxkbmap -option caps:swapescape
 # Start X automatically
 # if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 #     startx
 # fi
+#https://unix.stackexchange.com/questions/46960/how-to-configure-gpg-to-enter-passphrase-only-once-per-session
+# Invoke GnuPG-Agent the first time we login.
+# Does `~/.gpg-agent-info' exist and points to gpg-agent process accepting signals?
+# if test -f $HOME/.gpg-agent-info && \
+#     kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
+#     GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
+# else
+#     # No, gpg-agent not available; start gpg-agent
+#     eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
+# fi
+# export GPG_TTY=`tty`
+# export GPG_AGENT_INFO
 # vim:foldmethod=marker:foldlevel=0
 

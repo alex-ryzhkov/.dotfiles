@@ -29,7 +29,7 @@ bindsym button1 nop
 
 # Start a terminal
 # bindsym $mod+Return exec /home/yoba/crt.sh
-bindsym $mod+Return exec uxterm
+bindsym $mod+Return exec alacritty
 
 # Kill focused window
 # bindsym $mod+Shift+slash kill
@@ -179,8 +179,10 @@ bindsym Ctrl+Down exec --no-startup-id "amixer set Master 5%-"
 bindsym Ctrl+Up exec --no-startup-id "amixer set Master 5%+"
 bindsym F10 exec --no-startup-id "amixer set Master 5%-"
 bindsym F11 exec --no-startup-id "amixer set Master 5%+"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.hdmi-stereo toggle"
-bindsym $mod+m  exec --no-startup-id "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.hdmi-stereo toggle"
+# bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.hdmi-stereo toggle"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute `pactl list sinks | grep Name | awk '{print $2}'` toggle"
+# bindsym $mod+m  exec --no-startup-id "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.hdmi-stereo toggle"
+bindsym $mod+m  exec --no-startup-id "pactl set-sink-mute `pactl list sinks | grep Name | awk '{print $2}'` toggle"
 
 # Media keys
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
@@ -243,8 +245,9 @@ bar {
 
 # Make the following  apps act as toggable scratchpad windows
 # bindsym F1 exec wmctrl -a firefox
-bindsym F1 [class="cool-retro-term"] scratchpad show
-bindsym F2 [title=".*scratch.txt.*GVIM.*"] scratchpad show
+#bindsym F1 [class="cool-retro-term"] scratchpad show
+bindsym F1 [instance="toggleable"] scratchpad show
+bindsym F2 [instance="vim-scratch"] scratchpad show
 bindsym F3 [class="GoldenDict"] scratchpad show
 bindsym F4 [class="Spotify"] scratchpad show
 # bindsym F8 exec wmctrl -xa element
@@ -272,12 +275,11 @@ assign [class="mpv"] 9
 
 # Turn toggable apps to scratchpad workspaces
 for_window [class="GoldenDict"] move scratchpad
-for_window [title=".*gedit$"] move scratchpad
-for_window [title=".*scratch.txt.*GVIM.*"] move scratchpad, resize set 1600 900, move absolute position center
+for_window [instance="vim-scratch"] move scratchpad, resize set 1600 900, move absolute position center
 # for_window [title="mocp"] move scratchpad
 for_window [title="^support$"] move scratchpad
 # for_window [class="cool-retro-term"] move scratchpad, resize set 1600 900, move absolute position center
-for_window [class="cool-retro-term"] move scratchpad, resize set 2560 1080, move absolute position center
+for_window [instance="toggleable"] move scratchpad, resize set 2560 1080, move absolute position center
 for_window [class="Spotify"] move scratchpad, resize set 2560 1080, move absolute position center
 
 #I'm not sure why it works but it lets guake to behave the way I want it
@@ -297,6 +299,7 @@ exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 
 # Autostart
 # exec --no-startup-id dropbox start
+exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
 exec --no-startup-id conky -p 40
@@ -307,18 +310,17 @@ exec --no-startup-id xset s off
 exec --no-startup-id picom -b
 # exec --no-startup-id "~/.config/i3/load_layout.sh "
 # exec --no-startup-id element-desktop
-exec --no-startup-id cool-retro-term -T "cool-retro-term"
+exec --no-startup-id /home/yoba/alacritty.sh
 exec --no-startup-id firefox
-exec --no-startup-id gedit
 exec --no-startup-id copyq
-exec --no-startup-id "gvim scratch.txt"
+exec --no-startup-id /home/yoba/vim-scratch.sh
 # exec --no-startup-id guake
 exec --no-startup-id dunst
 exec --no-startup-id yandex-disk start
 exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,gedit,,
+exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,vim-scratch,,
 # exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,cool-retro-term,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,goldendict,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,termite,,

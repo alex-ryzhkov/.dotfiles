@@ -7,6 +7,9 @@ audio-recorder
 checkupdates+aur
 checkupdates-aur
 cli-visualizer-git
+clight-git
+clight-gui-git
+clightd-git
 dropbox
 dust
 dwm-distrotube-git
@@ -19,11 +22,16 @@ gksu-polkit
 glogg
 gzdoom
 id3
+js52
+js60
 k2pdfopt
 klogg-bin
 lf-git
+libmodule
 libqdark-git
+librewolf-bin
 mhwd-catalyst
+mhwd-nvidia-340xx
 microsoft-edge-dev-bin
 moc-pulse
 monolith
@@ -32,6 +40,7 @@ mpz
 nodejs-nativefier
 notepadqq-git
 openbor
+orage
 otf-fira-code
 perl-checkupdates-aur
 perl-www-aur
@@ -42,7 +51,7 @@ python-pillow-simd
 python-pygdbmi
 python-sip-pyqt5
 python2-dukpy
-python2-future
+python2-gobject2
 python2-pyglet
 python2-pytoml
 qdirstat
@@ -65,7 +74,6 @@ up
 urlview-git
 viber
 visual-studio-code-bin
-viu
 vtable-dumper
 xcape-git
 xdg-su
@@ -77,4 +85,5 @@ xorg-editres
 xorg-font-utils
 yadm-git
 yandex-disk
+youtube-dl-git
 zmusic
