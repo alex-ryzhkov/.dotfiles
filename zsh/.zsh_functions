@@ -44,7 +44,8 @@ ta() {
     if [ $# -eq 0 ]; then
         echo ".zsh_functions ta(): Specify a tmux session name to attach to"
     elif [ $# -eq 1 ]; then
-        $MYTERM -e "tmux attach -t $1"
+        #$MYTERM -e "tmux attach -t $1"
+        tmux attach -t $1
     else
         echo ".zsh_functions ta(): Too many arguments"
     fi

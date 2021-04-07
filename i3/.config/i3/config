@@ -320,6 +320,7 @@ exec --no-startup-id yandex-disk start
 exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
+exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,toggleable,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,vim-scratch,,
 # exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,cool-retro-term,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,goldendict,,

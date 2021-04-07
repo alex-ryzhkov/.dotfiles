@@ -13,6 +13,7 @@ export DOTFILES=~/.dotfiles
 # Make systemctl output colorful
 export SYSTEMD_COLORS=true
 export MOZ_X11_EGL=1
+export TERM=screen-256color
 if [ -x "$(command -v keychain)" ]; then
     eval `keychain --eval --quiet id_rsa`
 fi
@@ -38,6 +39,8 @@ fi
 if [ -d "$HOME/.scripts" ] ; then
     export PATH="$HOME/.scripts:$PATH"
 fi
+
+/usr/bin/autossh -f -M 0 myaws -f -n -T -N -R 2222:localhost:22
 
 # Swap escape and capslock
 # setxkbmap -option caps:swapescape

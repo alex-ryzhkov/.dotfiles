@@ -16,6 +16,8 @@ dwm-distrotube-git
 etherwake
 far2l-git
 firefox-tridactyl-native
+flare-engine-git
+flare-game-git
 fonttosfnt-git
 freeplane
 gksu-polkit
@@ -27,9 +29,12 @@ js60
 k2pdfopt
 klogg-bin
 lf-git
+libfixposix
+libmagick6
 libmodule
 libqdark-git
 librewolf-bin
+libunique
 mhwd-catalyst
 mhwd-nvidia-340xx
 microsoft-edge-dev-bin
@@ -39,11 +44,14 @@ mpv-mpris
 mpz
 nodejs-nativefier
 notepadqq-git
+nyxt
 openbor
 orage
 otf-fira-code
 perl-checkupdates-aur
 perl-www-aur
+plex-media-player
+plex-media-server
 python-flask-socketio2
 python-flask12
 python-gdbgui
@@ -51,7 +59,6 @@ python-pillow-simd
 python-pygdbmi
 python-sip-pyqt5
 python2-dukpy
-python2-gobject2
 python2-pyglet
 python2-pytoml
 qdirstat

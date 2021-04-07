@@ -8,6 +8,7 @@ alsa-utils
 android-tools
 android-udev
 anki
+ansible
 apache
 arandr
 aspell-en
@@ -16,6 +17,7 @@ atop
 audacity
 autoconf
 automake
+autossh
 avahi
 b43-fwcutter
 bash
@@ -45,6 +47,7 @@ ctags
 cups
 cups-pdf
 cups-pk-helper
+dconf-editor
 deadbeef
 device-mapper
 dhclient
@@ -154,6 +157,7 @@ intel-ucode
 inxi
 iotop
 ipcalc
+iperf
 iproute2
 iptables
 iputils
@@ -169,6 +173,7 @@ jre8-openjdk
 jre8-openjdk-headless
 keepassxc
 keychain
+keynav
 konsole
 less
 lib32-flex
@@ -295,6 +300,7 @@ pciutils
 perl
 perl-anyevent-i3
 perl-file-mimeinfo
+perl-image-exiftool
 php-fpm
 picom
 pidgin
@@ -347,6 +353,7 @@ shadow
 shellcheck
 sipcalc
 smartmontools
+smem
 spectre-meltdown-checker
 splix
 sshfs
@@ -358,6 +365,7 @@ subversion
 sudo
 sxhkd
 sxiv
+syncthing
 sysfsutils
 sysstat
 system-config-printer
@@ -391,6 +399,7 @@ ttf-ibm-plex
 ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
+ttf-roboto
 tumbler
 udiskie
 udisks2
@@ -474,6 +483,7 @@ xorg-appres
 xorg-server
 xorg-server-xephyr
 xorg-twm
+xorg-xclock
 xorg-xev
 xorg-xeyes
 xorg-xinit
