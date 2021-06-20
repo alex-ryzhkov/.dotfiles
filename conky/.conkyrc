@@ -39,8 +39,6 @@ ${offset 20}Repo:$alignr${execpi 3600 checkupdates | awk 'END { print (NR == 0 ?
 ${offset 20}AUR:$alignr${execpi 3600 checkupdates-aur | awk 'END { print (NR == 0 ? "up to date" : NR " package" (NR > 1 ? "s" : "")); }'}
 ${font Terminus:size=12}${color #756969}CPU ${hr 2} ${alignr}${font}$color
 
-${offset 20}Average (${cpu cpu0}%)${alignr}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input | cut -c-2 }°C
-${platform coretemp.0 temp 1}
 ${offset 20}${cpugraph cpu0}
 
 ${offset 20}${top name 1}$alignr${top cpu 1}%
@@ -68,8 +66,8 @@ ${offset 20}${fs_bar /}
 ${offset 20}/home ${fs_used /home/yoba} / ${fs_size /home/yoba} $alignr ${fs_used_perc /home/yoba}%
 ${offset 20}${fs_bar /home/yoba}
 
-${offset 20}/win ${offset 2} ${fs_used /run/mount/win} / ${fs_size /run/mount/win} $alignr ${fs_used_perc /run/mount/win}%
-${offset 20}${fs_bar /run/mount/win}
+${offset 20}/storage ${offset 2} ${fs_used /home/yoba/storage} / ${fs_size /home/yoba/storage} $alignr ${fs_used_perc /home/yoba/storage}%
+${offset 20}${fs_bar /home/yoba/storage}
 ${color #756969}${if_up wlo1}wlo1 (${addr wlo1}) ${hr 2}$color
 ${offset 20}${color white}$color ${downspeed wlo1}${alignr}${color white}$color ${upspeed wlo1}
 ${offset 20}${downspeedgraph wlo1 25,100} ${alignr}${upspeedgraph wlo1 25,100}$color${endif}

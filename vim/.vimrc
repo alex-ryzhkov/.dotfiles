@@ -25,6 +25,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'brauner/vimtux'
 Plug 'RyanMillerC/better-vim-tmux-resizer'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'christoomey/vim-tmux-runner'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -90,6 +91,9 @@ nnoremap <silent> <Left> :TmuxResizeLeft<CR>
 nnoremap <silent> <Down> :TmuxResizeDown<CR>
 nnoremap <silent> <Up> :TmuxResizeUp<CR>
 nnoremap <silent> <Right> :TmuxResizeRight<CR>
+
+" Vimrunner
+nnoremap <leader>p :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'ipython'}<cr>
 " }}}
 " Plugins settings {{{
 
@@ -105,6 +109,11 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " Nerdtree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
+
+" Vimrunner
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
 " }}}
 " Visual settings {{{
 

@@ -123,3 +123,4 @@ if [ -x "$(command -v keychain)" ]; then
 fi
 
 # vim:foldmethod=marker:foldlevel=0
+if [ -e /home/yoba/.nix-profile/etc/profile.d/nix.sh ]; then . /home/yoba/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

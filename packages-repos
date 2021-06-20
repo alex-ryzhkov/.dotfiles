@@ -9,6 +9,7 @@ android-tools
 android-udev
 anki
 ansible
+ansible-lint
 apache
 arandr
 aspell-en
@@ -33,6 +34,7 @@ cantarell-fonts
 catfish
 chafa
 chromium
+clusterssh
 cmatrix
 cmus
 conky
@@ -48,7 +50,6 @@ cups
 cups-pdf
 cups-pk-helper
 dconf-editor
-deadbeef
 device-mapper
 dhclient
 dhcpcd
@@ -58,6 +59,7 @@ dmenu
 dmidecode
 dmraid
 dnsmasq
+docker
 dolphin-emu
 dosfstools
 dunst
@@ -132,6 +134,7 @@ gtk-chtheme
 gtk3
 guake
 gufw
+gulp
 gvfs
 gvfs-afc
 gvfs-gphoto2
@@ -142,6 +145,7 @@ gvim
 gzip
 haveged
 hexchat
+home-assistant
 hplip
 htop
 hyperfine
@@ -151,6 +155,7 @@ i3blocks
 i3lock
 i3status
 i3status-rust
+iftop
 inetutils
 intel-gpu-tools
 intel-ucode
@@ -163,7 +168,6 @@ iptables
 iputils
 ipw2100-fw
 ipw2200-fw
-ipython
 irssi
 isync
 jdk8-openjdk
@@ -171,6 +175,7 @@ jfsutils
 jq
 jre8-openjdk
 jre8-openjdk-headless
+kdeconnect
 keepassxc
 keychain
 keynav
@@ -204,8 +209,6 @@ lightdm-gtk-greeter-settings
 links
 linux-firmware
 linux419
-linux59
-linux59-virtualbox-host-modules
 logrotate
 lostfiles
 lrzsz
@@ -263,6 +266,7 @@ neofetch
 neomutt
 neovim
 net-tools
+netdata
 nethogs
 network-manager-applet
 networkmanager
@@ -306,6 +310,7 @@ picom
 pidgin
 pkgconf
 playerctl
+pm2
 polybar
 ponysay
 poppler-data
@@ -487,6 +492,7 @@ xorg-xclock
 xorg-xev
 xorg-xeyes
 xorg-xinit
+xorg-xinput
 xorg-xkill
 xorg-xsetroot
 xsel

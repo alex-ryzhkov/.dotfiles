@@ -17,8 +17,7 @@ block = "sound"
 [[block]]
 block = "net"
 device = "enp0s31f6"
-speed_up = false
-speed_down = false
+format = ""
 
 [[block]]
 block = "time"

@@ -1,6 +1,6 @@
 alias screenrec='ffmpeg -y -f x11grab -framerate 30 -video_size 1366x768 -i :0.0+0,0 -c:v libx264 -pix_fmt yuv420p -qp 0 -preset ultrafast videorecord.avi'
 alias ls='ls --color=auto -h --group-directories-first'
-alias mutt='neomutt'
+#alias mutt='neomutt'
 alias news='newsboat'
 alias cdf="cd $DOTFILES"
 alias cdpkg='cd /var/cache/pacman/pkg'
@@ -19,3 +19,4 @@ alias dU='du -h --max-depth=1 2>/dev/null | sort -rh | head -n 20'
 # Internet
 alias yt='youtube-dl -f best -ciw -o "%(upload_date)s-%(title)s.%(ext)s" -v' # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
+alias mutt="mbsync -a && neomutt"
