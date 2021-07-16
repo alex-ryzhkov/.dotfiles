@@ -62,6 +62,7 @@ dnsmasq
 docker
 dolphin-emu
 dosfstools
+dropbox
 dunst
 e2fsprogs
 ecryptfs-utils
@@ -291,6 +292,7 @@ openbsd-netcat
 openresolv
 openssh
 os-prober
+osquery
 p7zip
 pacman
 pacutils
@@ -381,7 +383,6 @@ tar
 tcpdump
 telegram-desktop
 terminus-font
-termite
 tex-gyre-fonts
 texinfo
 texlive-core

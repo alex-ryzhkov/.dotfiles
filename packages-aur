@@ -12,7 +12,6 @@ clight-git
 clight-gui-git
 clightd-git
 deadbeef
-dropbox
 dust
 dwm-distrotube-git
 epsxe
@@ -29,15 +28,18 @@ freeplane
 gksu-polkit
 glogg
 gzdoom
+icewm-git
 id3
 js52
 js60
 k2pdfopt
 klogg-bin
 lf-git
+libblocksruntime
 libfixposix
 libmagick6
 libmodule
+libnm-glib
 libqdark-git
 librewolf-bin
 libunique
@@ -81,6 +83,8 @@ spotify
 tabbed
 task-spooler
 terminus-font-ttf
+termite
+termite-terminfo
 tllist
 tor-browser
 ttf-font-awesome-4
