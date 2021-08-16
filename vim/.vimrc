@@ -26,6 +26,8 @@ Plug 'brauner/vimtux'
 Plug 'RyanMillerC/better-vim-tmux-resizer'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'christoomey/vim-tmux-runner'
+Plug 'ap/vim-css-color'
+Plug 'chase/vim-ansible-yaml'
 " All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required

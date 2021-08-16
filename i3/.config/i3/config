@@ -279,7 +279,7 @@ assign [class="mpv"] 9
 for_window [class="GoldenDict"] move scratchpad
 for_window [instance="vim-scratch"] move scratchpad, resize set 1600 900, move absolute position center
 # for_window [title="mocp"] move scratchpad
-for_window [title="^support$"] move scratchpad
+#for_window [title="^support$"] move scratchpad
 # for_window [class="cool-retro-term"] move scratchpad, resize set 1600 900, move absolute position center
 for_window [instance="toggleable"] move scratchpad, resize set 2560 1080, move absolute position center
 for_window [class="Spotify"] move scratchpad, resize set 2560 1080, move absolute position center
@@ -304,7 +304,7 @@ exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
-exec --no-startup-id conky -p 40
+exec --no-startup-id conky
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
 exec --no-startup-id unclutter -b
@@ -323,10 +323,10 @@ exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
 exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
 #exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,toggleable,,
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,vim-scratch,,
+#exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,vim-scratch,,
 # exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,cool-retro-term,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,goldendict,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,termite,,
 exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,spotify,,
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,gvim,,
+#exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,gvim,,
 

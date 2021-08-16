@@ -12,7 +12,6 @@ clight-git
 clight-gui-git
 clightd-git
 deadbeef
-dust
 dwm-distrotube-git
 epsxe
 etherwake
@@ -35,11 +34,12 @@ js60
 k2pdfopt
 klogg-bin
 lf-git
-libblocksruntime
+libdispatch
 libfixposix
 libmagick6
 libmodule
 libnm-glib
+libopenaptx
 libqdark-git
 librewolf-bin
 libunique
@@ -51,9 +51,9 @@ microsoft-edge-dev-bin
 moc-pulse
 monitorix
 monolith
-mozilla-common
 mpv-mpris
 mpz
+nicstat
 nodejs-nativefier
 notepadqq-git
 nyxt
@@ -72,6 +72,7 @@ python-pillow-simd
 python-pygdbmi
 python-sip-pyqt5
 python2-dukpy
+python2-gobject2
 python2-pyglet
 python2-pytoml
 qdirstat
@@ -86,7 +87,6 @@ terminus-font-ttf
 termite
 termite-terminfo
 tllist
-tor-browser
 ttf-font-awesome-4
 ttf-material-icons
 ttf-ms-fonts

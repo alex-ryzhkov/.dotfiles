@@ -1,6 +1,7 @@
 accountsservice
 acpi
 acpid
+adwaita-qt
 aerc
 alacritty
 alsa-firmware
@@ -20,6 +21,7 @@ autoconf
 automake
 autossh
 avahi
+awesome
 b43-fwcutter
 bash
 bat
@@ -64,6 +66,7 @@ dolphin-emu
 dosfstools
 dropbox
 dunst
+dust
 e2fsprogs
 ecryptfs-utils
 ed
@@ -393,6 +396,7 @@ thunar-media-tags-plugin
 thunar-volman
 thunderbird
 thunderbird-i18n-en-us
+tig
 tlp
 tmux
 traceroute
