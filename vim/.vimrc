@@ -94,6 +94,14 @@ nnoremap <silent> <Down> :TmuxResizeDown<CR>
 nnoremap <silent> <Up> :TmuxResizeUp<CR>
 nnoremap <silent> <Right> :TmuxResizeRight<CR>
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C->> :TmuxNavigatePrevious<cr>
+
 " Vimrunner
 nnoremap <leader>p :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'ipython'}<cr>
 " }}}

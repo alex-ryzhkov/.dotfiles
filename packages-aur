@@ -11,7 +11,10 @@ cli-visualizer-git
 clight-git
 clight-gui-git
 clightd-git
+conky-git
 deadbeef
+doomrl
+dropbox
 dwm-distrotube-git
 epsxe
 etherwake
@@ -27,6 +30,7 @@ freeplane
 gksu-polkit
 glogg
 gzdoom
+i3ipc-glib-git
 icewm-git
 id3
 js52
@@ -36,6 +40,7 @@ klogg-bin
 lf-git
 libdispatch
 libfixposix
+libglade
 libmagick6
 libmodule
 libnm-glib
@@ -65,6 +70,7 @@ perl-checkupdates-aur
 perl-www-aur
 plex-media-player
 plex-media-server
+pygtk
 python-flask-socketio2
 python-flask12
 python-gdbgui
@@ -81,6 +87,7 @@ remmina-plugin-ultravnc
 shadowfox-updater
 skypeforlinux-stable-bin
 spotify
+systemtap-git
 tabbed
 task-spooler
 terminus-font-ttf
@@ -112,3 +119,4 @@ yadm-git
 yandex-disk
 youtube-dl-git
 zmusic
+zx-git

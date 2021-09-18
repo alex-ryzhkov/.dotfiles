@@ -75,4 +75,5 @@ ${color #756969}${if_up enp0s31f6}enp0s31f6 (${addr enp0s31f6}) ${hr 2}$color
 
 ${offset 20}${color white}$color ${downspeed enp0s31f6 }${alignr}${color white}$color ${upspeed enp0s31f6}
 ${offset 20}${downspeedgraph enp0s31f6 25,100} ${alignr}${upspeedgraph enp0s31f6 25,100}$color${endif}
+#${offset 20}%Util:$alignr${execpi 60 nicstat 1 1 | grep enp | awk '{ print $9 }'}
 ]]

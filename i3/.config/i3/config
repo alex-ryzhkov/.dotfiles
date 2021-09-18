@@ -29,6 +29,9 @@ bindsym button5 nop
 # Disabe selection by clicking on window title
 bindsym button1 nop
 
+# Disable ctrl+q
+bindsym Control+q nop
+
 # Start a terminal
 # bindsym $mod+Return exec /home/yoba/crt.sh
 bindsym $mod+Return exec alacritty
@@ -118,6 +121,8 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
 
 # Show empty workspace, move back to the last used workspace when pressed again
 bindsym $mod+0 exec --no-startup-id ~/.scripts/i3_show_desktop.sh
@@ -246,12 +251,10 @@ bar {
 #bindsym $mod+y exec --no-startup-id ~/.scripts/yt_script.sh
 
 # Make the following  apps act as toggable scratchpad windows
-# bindsym F1 exec wmctrl -a firefox
-#bindsym F1 [class="cool-retro-term"] scratchpad show
-bindsym F1 [instance="toggleable"] scratchpad show
-bindsym F2 [instance="vim-scratch"] scratchpad show
+bindsym F1 [instance="toggleable"] scratchpad show, resize set 2560 1080, move absolute position center
+bindsym F2 [instance="obsidian"] scratchpad show, resize set 2560 1080, move absolute position center
 bindsym F3 [class="GoldenDict"] scratchpad show
-bindsym F4 [class="Spotify"] scratchpad show
+bindsym F4 [class="Spotify"] scratchpad show, resize set 2560 1080, move absolute position center
 # bindsym F8 exec wmctrl -xa element
 
 bindsym $mod+Shift+n [class="GoldenDict"] scratchpad show
@@ -265,28 +268,23 @@ assign [class="okular"] 3
 # The following instruction is needed because okular doesn't move to workspace 1
 # automatically if it starts in fullscreen mode
 for_window [class="okular"] move workspace 3
-# for_window [class="ranger"] move workspace 2
 # assign [title="newsboat"] 2
-assign [class="Gens"] 3
-assign [class="QOwnNotes"] 3
 assign [class="Telegram"] 8
 assign [class="Thunderbird"] 8
 assign [class="discord"] 8
 assign [class="Element"] 8
-assign [class="mpv"] 9
+#assign [class="mpv"] 9
 
 # Turn toggable apps to scratchpad workspaces
 for_window [class="GoldenDict"] move scratchpad
-for_window [instance="vim-scratch"] move scratchpad, resize set 1600 900, move absolute position center
-# for_window [title="mocp"] move scratchpad
-#for_window [title="^support$"] move scratchpad
-# for_window [class="cool-retro-term"] move scratchpad, resize set 1600 900, move absolute position center
-for_window [instance="toggleable"] move scratchpad, resize set 2560 1080, move absolute position center
-for_window [class="Spotify"] move scratchpad, resize set 2560 1080, move absolute position center
+for_window [instance="obsidian"] move scratchpad
+for_window [instance="toggleable"] move scratchpad
+for_window [class="Spotify"] move scratchpad
 
 #I'm not sure why it works but it lets guake to behave the way I want it
 #i.e as a regular terminal without fullscreen
 for_window [class="Guake"] floating disable
+for_window [class="mpv"] floating enable
 # Make sure pop-up windows will float so they won't take the whole workspace
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -300,7 +298,6 @@ for_window [title="Open With"] floating enable
 exec --no-startup-id "feh --bg-fill ~/pictures/wallpaper.png"
 
 # Autostart
-# exec --no-startup-id dropbox start
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id goldendict
 exec --no-startup-id "numlockx on"
@@ -311,22 +308,12 @@ exec --no-startup-id unclutter -b
 exec --no-startup-id xset s off
 exec --no-startup-id picom -b
 # exec --no-startup-id "~/.config/i3/load_layout.sh "
-# exec --no-startup-id element-desktop
 exec --no-startup-id /home/yoba/alacritty.sh
 exec --no-startup-id firefox
 exec --no-startup-id copyq
-exec --no-startup-id /home/yoba/vim-scratch.sh
-# exec --no-startup-id guake
 exec --no-startup-id dunst
 exec --no-startup-id yandex-disk start
 exec --no-startup-id antimicroX --hidden
 # The following line ensures that dunst is not disabled by i3_toggle_work_mode.sh
-exec --no-startup-id "notify-send \"DUNST_COMMAND_RESUME\""
-#exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,toggleable,,
-#exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,vim-scratch,,
-# exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,cool-retro-term,,
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,goldendict,,
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,termite,,
-exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,spotify,,
-#exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,gvim,,
-
+exec --no-startup-id dunstctl set-paused false
+exec_always --no-startup-id /home/yoba/.scripts/auto_scratchpad.py True,,,toggleable,,

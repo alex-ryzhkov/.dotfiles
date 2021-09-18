@@ -40,7 +40,7 @@ if [ -d "$HOME/.scripts" ] ; then
     export PATH="$HOME/.scripts:$PATH"
 fi
 
-/usr/bin/autossh -f -M 0 myaws -f -n -T -N -R 2222:localhost:22
+#/usr/bin/autossh -f -M 0 myaws -f -n -T -N -R 2222:localhost:22
 
 # Swap escape and capslock
 # setxkbmap -option caps:swapescape
