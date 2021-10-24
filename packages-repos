@@ -8,7 +8,6 @@ alsa-firmware
 alsa-utils
 android-tools
 android-udev
-anki
 ansible
 ansible-lint
 apache
@@ -66,6 +65,7 @@ dosfstools
 dunst
 dust
 e2fsprogs
+ebook-tools
 ecryptfs-utils
 ed
 efibootmgr
@@ -420,6 +420,7 @@ util-linux
 vagrant
 vi
 viewnior
+vifm
 virtualbox
 virtualbox-guest-iso
 viu

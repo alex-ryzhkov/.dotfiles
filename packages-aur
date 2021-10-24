@@ -1,6 +1,7 @@
 abi-compliance-checker
 abi-dumper
 agedu
+anki
 antimicro
 arch-wiki-docs
 audio-recorder
@@ -30,6 +31,7 @@ freeplane
 gksu-polkit
 glogg
 gzdoom
+highway-git
 i3ipc-glib-git
 icewm-git
 id3
@@ -41,18 +43,17 @@ lf-git
 libdispatch
 libfixposix
 libglade
+libjxl-git
 libmagick6
 libmodule
 libnm-glib
 libopenaptx
 libqdark-git
-librewolf-bin
 libunique
 linux59
 linux59-virtualbox-host-modules
 mhwd-catalyst
 mhwd-nvidia-340xx
-microsoft-edge-dev-bin
 moc-pulse
 monitorix
 monolith
@@ -74,6 +75,7 @@ pygtk
 python-flask-socketio2
 python-flask12
 python-gdbgui
+python-mypy-protobuf
 python-pillow-simd
 python-pygdbmi
 python-sip-pyqt5
@@ -105,7 +107,6 @@ up
 urlview-git
 usbimager
 viber
-visual-studio-code-bin
 vtable-dumper
 xcape-git
 xdg-su
