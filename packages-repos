@@ -54,7 +54,6 @@ device-mapper
 dhclient
 dhcpcd
 diffutils
-discord
 dmenu
 dmidecode
 dmraid
@@ -182,6 +181,7 @@ keepassxc
 keychain
 keynav
 konsole
+ksshaskpass
 less
 lib32-flex
 lib32-gtk3
@@ -421,6 +421,7 @@ vagrant
 vi
 viewnior
 vifm
+virt-manager
 virtualbox
 virtualbox-guest-iso
 viu
@@ -439,6 +440,7 @@ wine-mono
 wireshark-qt
 wmctrl
 wpa_supplicant
+x11-ssh-askpass
 xcursor-simpleandsoft
 xcursor-vanilla-dmz-aa
 xdg-user-dirs

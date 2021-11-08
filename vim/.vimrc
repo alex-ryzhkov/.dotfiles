@@ -387,4 +387,8 @@ set undofile
 nnoremap <leader>t I* [ ]<space><esc>
 let g:insert_checkbox_prefix = '* '
 let g:checkbox_states = [' ', 'X']
+let g:vtr_filetype_runner_overrides = {
+            \ 'ruby': 'load "{file}"',
+            \ }
+let g:VtrUseVtrMaps = 1
 " vim:foldmethod=marker:foldlevel=0

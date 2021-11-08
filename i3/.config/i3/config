@@ -307,7 +307,7 @@ exec --no-startup-id "numlockx on"
 exec --no-startup-id conky
 exec --no-startup-id redshift-gtk -l 54.65:29.13
 exec --no-startup-id udiskie -asN &
-exec --no-startup-id unclutter -b
+#exec --no-startup-id unclutter -b
 exec --no-startup-id xset s off
 exec --no-startup-id picom -b
 # exec --no-startup-id "~/.config/i3/load_layout.sh "
